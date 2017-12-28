@@ -1,15 +1,11 @@
 ---
-title: "Paper Title Number 1"
+title: "A generalised Gauss circle problem and integrated density of states"
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+permalink: /publication/2016_Gauss_circle_problem
+excerpt: 'Counting lattice points inside a ball of large radius in Euclidean space is a classical problem in analytic number theory, dating back to Gauss. We propose a variation on this problem: studying the asymptotics of the measure of an integer lattice of affine planes inside a ball. The first term is the volume of the ball; we study the size of the remainder term. While the classical problem is equivalent to counting eigenvalues of the Laplace operator on the torus, our variation corresponds to the integrated density of states of the Laplace operator on the product of a torus with Euclidean space. The asymptotics we obtain are then used to compute the density of states of the magnetic Schroedinger operator.'
+date: 2016-12-22
+venue: 'Journal of Spectral Theory'
+paperurl: 'https://arxiv.org/pdf/1506.07115.pdf'
+citation: 'Jean Lagacé and Leonid Parnovski, A generalised Gauss circle problem and integrated density of states, <i>Journal of Spectral Theory</i>. 4:(6), pp. 859-879, 2016.'
 ---
-This paper is about the number 1. The number 2 is left for future work.
 
-[Download paper here](http://academicpages.github.io/files/paper1.pdf)
-
-Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
