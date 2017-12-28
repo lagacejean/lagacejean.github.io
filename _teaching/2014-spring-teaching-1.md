@@ -8,7 +8,7 @@ date: 2011-2017
 location: "Montréal, Canada"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+Description
 
 Heading 1
 ======
