@@ -1,20 +1,11 @@
 ---
-title: "Teaching assistant"
+title: "MAT1101 - Mathématiques fondamentales (Fundamental Mathematics)"
 collection: teaching
 type: "Undergraduate course"
-permalink: /teaching/2014-spring-teaching-1
+permalink: /teaching/MAT1101-H2013
 venue: "Université de Montréal"
-date: 2011-01-01
+date: 2013-01-01
 location: "Montréal, Canada"
 ---
 
-Description
-
-Heading 1
-======
-
-Heading 2
-======
-
-Heading 3
-======
+This course is aimed at future high school teachers in mathematics at Université de Montréal. The students are introduced to the Peano axioms, the induction principle, Euclid's algorithm, the construction of integers, rational, algebraic, real and complex numbers, cardinals and the fundamental theorem of algebra. My duties included conducting a weekly exercise session, holding office hours for student questions and marking exams.
