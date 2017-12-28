@@ -4,7 +4,7 @@ collection: teaching
 type: "Undergraduate course"
 permalink: /teaching/2014-spring-teaching-1
 venue: "Université de Montréal"
-date: 2011-2017
+date: 2011-01-01
 location: "Montréal, Canada"
 ---
 
