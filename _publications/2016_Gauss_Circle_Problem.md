@@ -4,6 +4,7 @@ collection: publications
 permalink: /publication/2016_Gauss_circle_problem
 date: 2016-12-22
 venue: 'Journal of Spectral Theory'
+link: 'https://arxiv.org/pdf/1506.07115.pdf'
 paperurl: 'https://arxiv.org/pdf/1506.07115.pdf'
 citation: 'Jean Lagacé and Leonid Parnovski, A generalised Gauss circle problem and integrated density of states, <i>Journal of Spectral Theory</i>. 4:(6), pp. 859-879, 2016.'
 ---
