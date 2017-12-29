@@ -1,6 +1,6 @@
 ---
-title: "A generalised Gauss circle problem and integrated density of states"
-collection: publications (with [Leonid Parnovski](http://www.homepages.ucl.ac.uk/~ucahlep/))
+title: "A generalised Gauss circle problem and integrated density of states (with [Leonid Parnovski](http://www.homepages.ucl.ac.uk/~ucahlep/))"
+collection: publications
 permalink: /publication/2016_Gauss_circle_problem
 date: 2016-12-22
 venue: 'Journal of Spectral Theory'
