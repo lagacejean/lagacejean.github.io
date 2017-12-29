@@ -2,7 +2,7 @@
 title: "A generalised Gauss circle problem and integrated density of states"
 collection: publications
 permalink: /publication/2016_Gauss_circle_problem
-coauthors: "[Leonid Parnovski](http://www.homepages.ucl.ac.uk/~ucahlep/)"
+coauthors: '[Leonid Parnovski](http://www.homepages.ucl.ac.uk/~ucahlep/)'
 date: 2016-12-22
 venue: 'Journal of Spectral Theory'
 link: 'https://arxiv.org/pdf/1506.07115.pdf'
