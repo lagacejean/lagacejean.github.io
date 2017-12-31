@@ -18,8 +18,11 @@ layout: default
   {% include sidebar.html %}
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if page.title and page.link %}<meta itemprop="headline" content="{{ <a href="{{ post.link }}">{{ title }}</a> | markdownify | strip_html | strip_newlines | escape_once }}">
-    {% elsif page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+     <h2 class="archive__item-title" itemprop="headline">
+       {% if page.title and page.link %} <a href="{{ post.link }}">{{ title }}</a>
+    {% elsif page.title %}{{ page.title  }}{% endif %}
+     </h2>
+    {% if page.coauthors %} <p>(joint with {{post.coauthors}})</p> {% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}
     {% if page.modified %}<meta itemprop="dateModified" content="{{ page.modified | date: "%B %d, %Y" }}">{% endif %}
