@@ -3,7 +3,6 @@ title: "Barcodes of Morse functions on surfaces"
 collection: seminar
 author: "Vukasin Stojisavljevic"
 university: "Tel-Aviv University"
-type: "seminar"
 permalink: /seminar/Stojisavljevic/
 venue: "Pavillon André-Aisenstadt, room AA-5183"
 date: 2018-01-22
