@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-# locale                   : "en-US"
+locale                   : "en-US"
 title                    : "Jean Lagacé"
 title_separator          : "-"
 name                     : &name "Jean Lagacé"
@@ -231,8 +231,8 @@ defaults:
       layout: single
       author_profile: true
       share: true
-      comment: true
- # _seminar
+      comments: true
+  # _seminar
   - scope:
       path: ""
       type: seminar
@@ -240,7 +240,7 @@ defaults:
       layout: single
       author_profile: true
       share: true
-comments: true
+      comments: true
   # _talks
   - scope:
       path: ""
