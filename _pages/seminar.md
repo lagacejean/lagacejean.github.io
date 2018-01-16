@@ -3,7 +3,7 @@ layout: archive
 title: "Spectral geometry seminar"
 permalink: /seminar/
 author_profile: true
-
+read_more: "disabled"
 ---
 
 
