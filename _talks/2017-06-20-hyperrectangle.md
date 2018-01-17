@@ -3,7 +3,7 @@ title: "The Steklov spectrum of hyperrectangles"
 collection: talks
 type: "Talk"
 permalink: /talks/2017-06-20-hyperrectangle
-venue: "Université de Neûchatel, Switzerland"
+venue: "Université de Neûchatel"
 date: 2017-06-20
 location: "Neûchatel, Switzerland"
 ---
