@@ -3,7 +3,7 @@ title: "Higher-order Cheeger inequalities for Laplacian and Steklov eigenvalues"
 collection: seminar
 author: "Antoine Métras"
 university: "Université de Montréal"
-permalink: /seminar/Stojisavljevic/
+permalink: /seminar/Metras/
 venue: "Pavillon André-Aisenstadt, room AA-5183"
 date: 2018-01-29
 location: "Université de Montréal, Montréal"
