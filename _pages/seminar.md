@@ -10,7 +10,7 @@ read_more: "disabled"
 {% include base_path %}
 
 ## Upcoming : 
-{% for post in site.seminar reversed%}
+{% for post in site.seminar limit:1%}
   {% include archive-single.html %}
 {% endfor %}
 
