@@ -10,7 +10,8 @@ read_more: "disabled"
 {% include base_path %}
 
 ## Upcoming : 
-{% for post in site.seminar reversed limit:1%}
+{% assign sems = site.seminar | sort: 'date' | reverse %}
+{% for post in sems limit:1 %}
   {% include archive-single.html %}
 {% endfor %}
 
