@@ -1,0 +1,13 @@
+---
+title: "Uniform spectral asymptotics on flat tori"
+collection: seminar
+author: "Jean Lagacé"
+university: "Université de Montréal"
+permalink: /seminar/Lagace/
+venue: "Pavillon André-Aisenstadt, room AA-5183"
+date: 2018-04-09
+location: "Université de Montréal, Montréal"
+time: "14h"
+---
+
+Spectral asymptotics for the eigenvalue of the Laplacian on a manifold are governed by the well known Weyl's law. However, the implicit constant in the error term in Weyl's law is not uniform when one takes large families of manifolds. In this presentation, I will show how one can get a uniform estimate on the remainder under a genericity condition in the family of flat tori. We will also see that this condition is necessary.
