@@ -5,7 +5,7 @@ author: "Broderick Causley"
 university: "McGill"
 permalink: /seminar/Causley/
 venue: "Pavillon André-Aisenstadt, room AA-5183"
-date: 2018-03-19
+date: 2018-03-26
 location: "Université de Montréal, Montréal"
 time: "14h"
 ---
