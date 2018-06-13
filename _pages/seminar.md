@@ -7,7 +7,7 @@ read_more: "disabled"
 ---
 
 
-{% include base_path %}
+<!-- {% include base_path %} -->
 
 ## Upcoming : 
 
