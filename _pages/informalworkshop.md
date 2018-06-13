@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Informal mini-workshop on Spectral and Algebraic Geometry"
-permalink: /seminar/
+permalink: /informalworshop/
 author_profile: true
 read_more: "disabled"
 ---
