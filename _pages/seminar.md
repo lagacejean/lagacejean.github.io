@@ -10,10 +10,16 @@ read_more: "disabled"
 {% include base_path %}
 
 ## Upcoming : 
-{% assign sems = site.seminar | sort: 'date' | reverse %}
-{% for post in sems limit:1 %}
-  {% include archive-single.html %}
-{% endfor %}
 
-## Archive
+[Informal workshop on Spectral and Algebraic Geometry](informalworkshop.md)
+
+ <!--
+{% assign sems = site.seminar | sort: 'date' | reverse %}
+{% for post in s## Archive
+ems limit:1 %}
+  {% include archive-single.html %}
+{% endfor %} -->
+
+
+
 
