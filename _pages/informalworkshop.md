@@ -1,0 +1,79 @@
+---
+layout: archive
+title: "Informal mini-workshop on Spectral and Algebraic Geometry"
+permalink: /seminar/
+author_profile: true
+read_more: "disabled"
+---
+
+
+## June 26-27, 2018, Pav. Andr&eacute;-Aisenstadt, room 5183
+
+
+## Schedule:
+
+### June 26
+
+* 9:40 - 10:30 : **Michael Levitin** (Reading) 
+
+  * **Title** : A gentle introduction to Dirichlet-to-Neumann maps and spectral asymptotics for the Steklov problem.
+
+  * **Abstract** : I will first introduce the notion of the Dirichlet-to-Neumann map, and discuss its basic properties (and, time permitting, its use in some computational problems). In the second part of the talk, I’ll discuss the sharp eigenvalue asymptotics for the Steklov problem in curvilinear polygons.
+
+
+* 10:40 -- 11:30 : **Alexandre Fernandes** (Ceara) 
+
+  * **Title** : Multiplicity of singularities as bi-Lipschitz invariant
+
+  * **Abstract** : We prove that multiplicity of complex analytic singularities of dimension d is invariant under bi-Lipschitz homeomorphisms if, and only if, d=1 or d=2. This result was obtained in joint works with J. de Bobadilla, J. E. Sampaio. and L. Birbrair, J. E. Sampaio, M. Verbitsky. 
+
+#### Lunch
+
+
+* 13:40 - 14:30 : **Mikhail Karpukhin** (McGill)
+
+  * **Title** : Index of minimal surfaces in S<sup>n</sup> with applications to shape optimisation.
+
+  * **Abstract** : TBA
+
+
+*  14:40 - 15:30 : **Antoine Henrot**   (Nancy)        
+
+  * **Title** : A survey on recent results of isoperimetric inequalities for eigenvalues
+
+
+  * **Abstract** : In this talk, we will review recent isoperimetric inequalities involving the eigenvalues of the Laplacian (with Dirichlet or Neumann boundary conditions) with various geometric constraints (on the area, the perimeter, the diameter...). We will also give several open problems showing the vitality of this field.
+
+
+### June 27
+
+
+
+* 9:40 - 10:30 : **Andrei Gabrielov** (Purdue)
+
+  * **Title** : Classification of spherical quadrilaterals.
+
+  * **Abstract** : A spherical polygon (membrane) is a bordered surface homeomorphic to a closed disc, with n distinguished boundary points called corners, equipped with a Riemannian metric of constant curvature 1, except at the corners where it has conical singularities, and such that the boundary arcs between the corners are geodesic. Spherical polygons with n=3 and n=4 are called spherical triangles and quadrilaterals, respectively. This is a very old problem, related to the properties of real solutions of the real Heun equation (a Fuchsian differential equation with four real singular points and real coefficients). The corresponding problem for generic spherical triangles, related to the hypergeometric equation, was solved by Felix Klein more than 100 years ago, while non-generic cases were completely classified as late as 2011.   When all interior angles at the corners are integer multiples of &pi;, classification of spherical quadrilaterals is equivalent to classification of rational functions with four real critical points, a special case of the B. and M. Shapiro conjecture.  Rational functions with real critical points can be characterized by their nets, combinatorial objects similar to Grothendieck's dessins d'enfants. Similarly, spherical polygons can be characterized by multi-colored nets, non-algebraic analogs of dessins d'enfants. If time permits, I'll tell about classification of circular quadrilaterals (with the sides mapped to not necessarily geodesic circles on the sphere), and about connection between isomonodromic deformation of a Fuchsian differential equation with 5 singular points and solutions of the Painleve VI equation. This connection allows one to represent a real solution of the real Painleve VI equation by a sequence of nets of circular quadrilaterals and special (with one angle equal to 2&pi;) circular pentagons.
+
+
+* 10:40 - 11:30 : **Lev Birbrair**
+
+  * **Title** : Resonance Sequences and Focal Decompositions.
+
+  * **Abstract** : TBA
+
+#### Lunch
+
+* 13:40 - 14:30 **Jean Lagac&eacute;**    (Montr&eacute;al)
+
+  * **Title** : Optimal tori and anisotropically expanding domains
+
+  * **Abstract** : The spectrum of a flat torus is easy to describe, and for a given torus we have had bounds on the error term in Weyl's law for quite some time now. However, one cannot hope to get a uniform bound on the error term holding for any flat torus at a given value of the spectral parameter. In this talk, I will present how one can relate the size of the error term with the rate of degeneracy of a sequence of flat tori, and obtain the behaviour of sequences of optimal flat tori for dimensions smaller than 10.
+
+
+* 14:40 - 14:30 **Leonid Parnovski**  (UCL)   14:40-15:30
+
+  * **Title** : TBA
+
+  * **Abstract** : TBA
+
