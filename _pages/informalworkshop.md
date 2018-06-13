@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Informal mini-workshop on Spectral and Algebraic Geometry"
-permalink: /informalworshop/
+permalink: /informalworkshop/
 author_profile: true
 read_more: "disabled"
 ---
@@ -71,7 +71,7 @@ read_more: "disabled"
   * **Abstract** : The spectrum of a flat torus is easy to describe, and for a given torus we have had bounds on the error term in Weyl's law for quite some time now. However, one cannot hope to get a uniform bound on the error term holding for any flat torus at a given value of the spectral parameter. In this talk, I will present how one can relate the size of the error term with the rate of degeneracy of a sequence of flat tori, and obtain the behaviour of sequences of optimal flat tori for dimensions smaller than 10.
 
 
-* 14:40 - 14:30 **Leonid Parnovski**  (UCL)   14:40-15:30
+* 14:40 - 15:30 **Leonid Parnovski**  (UCL)
 
   * **Title** : TBA
 
