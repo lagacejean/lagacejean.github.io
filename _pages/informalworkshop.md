@@ -27,7 +27,7 @@ read_more: "disabled"
 
   * **Abstract** : We prove that multiplicity of complex analytic singularities of dimension d is invariant under bi-Lipschitz homeomorphisms if, and only if, d=1 or d=2. This result was obtained in joint works with J. de Bobadilla, J. E. Sampaio. and L. Birbrair, J. E. Sampaio, M. Verbitsky. 
 
-#### Lunch
+### Lunch
 
 
 * 13:40 - 14:30 : **Mikhail Karpukhin** (McGill)
@@ -62,7 +62,7 @@ read_more: "disabled"
 
   * **Abstract** : TBA
 
-#### Lunch
+### Lunch
 
 * 13:40 - 14:30 **Jean Lagac&eacute;**    (Montr&eacute;al)
 
