@@ -73,7 +73,7 @@ read_more: "disabled"
 
 * 14:40 - 15:30 **Leonid Parnovski**  (UCL)
 
-  * **Title** : TBA
+  * **Title** : Periodic and almost-periodic spectral problems
 
   * **Abstract** : TBA
 
