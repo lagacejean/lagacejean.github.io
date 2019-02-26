@@ -8,7 +8,7 @@ author_profile: true
 ## Submitted publications
 
 ###  [Eigenvalue optimisation on flat tori and lattice points in anisotropically expanding domains](https://arxiv.org/abs/1809.01469)
-* arXiv prepring, 2018
+* arXiv preprint, 2018
 
 ## Accepted publications
 
