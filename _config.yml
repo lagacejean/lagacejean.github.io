@@ -8,16 +8,16 @@ atom_feed:
   path: ~
 author: 
   avatar: profile.png
-  bio: "Ph. D. candidate in mathematics at Université de Montréal, under the direction of Iosif Polterovich."
+  bio: "Research associate in the department of mathematics at University College London"
   bitbucket: ~
   codepen: ~
   dribbble: ~
-  email: "lagacej AT dms DOT umontreal DOT ca"
+  email: "j.lagace AT ucl DOT ac DOT uk"
   employer: ~
   facebook: ~
   flickr: ~
   foursquare: ~
-  github: lagacejean
+  github: ~
   google_plus: ~
   googlescholar: "https://scholar.google.ca/citations?user=xoJjgZsAAAAJ&hl=en"
   instagram: ~
@@ -49,9 +49,6 @@ collections:
     output: true
     permalink: "/:collection/:path/"
   publications: 
-    output: true
-    permalink: "/:collection/:path/"
-  seminar: 
     output: true
     permalink: "/:collection/:path/"
   talks: 
