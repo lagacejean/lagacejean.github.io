@@ -5,7 +5,7 @@ permalink: /talks/
 author_profile: true
 ---
 
-#### Recent talks, or talks I'll be giving soon.
+### Recent talks, or talks I'll be giving soon.
 
 * May 14-15th 2019, University of Bristol
   * [Spectral Theory and Geometry](https://bristol2daymeetingmay2019.wordpress.com/)
