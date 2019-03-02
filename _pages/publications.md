@@ -5,12 +5,12 @@ permalink: /publications/
 author_profile: true
 ---
 
-## Submitted publications
 
-###  [Eigenvalue optimisation on flat tori and lattice points in anisotropically expanding domains](https://arxiv.org/abs/1809.01469)
-* arXiv preprint, 2018
 
 ## Accepted publications
+
+###  [Eigenvalue optimisation on flat tori and lattice points in anisotropically expanding domains](https://arxiv.org/abs/1809.01469)
+* To appear in the *Canadian Journal of Mathematics*
 
 ### Appendix of [A. Hassannezhad](https://asmahassannezhad.wordpress.com/), [A. Laptev](http://wwwf.imperial.ac.uk/~alaptev/), [Eigenvalue bounds of mixed Steklov problems](https://arxiv.org/abs/1712.00753)
 * Joint with F. Ferrulli
