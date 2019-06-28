@@ -5,7 +5,10 @@ permalink: /publications/
 author_profile: true
 ---
 
+## Preprints
 
+###  [From Steklov to Neumann, via homogenisation](https://arxiv.org/abs/1906.09638)
+* Joint with [A. Girouard](https://archimede.mat.ulaval.ca/agirouard/) and [A. Henrot](http://www.iecl.univ-lorraine.fr/~Antoine.Henrot/).
 
 ## Accepted publications
 
