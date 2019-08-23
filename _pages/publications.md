@@ -7,22 +7,31 @@ author_profile: true
 
 ## Preprints
 
-###  [From Steklov to Neumann, via homogenisation](https://arxiv.org/abs/1906.09638)
+###  6. Optimal unions of scaled copies of domains and Pólya's conjecture
+* Joint with [P. Freitas](https://www.math.tecnico.ulisboa.pt/~pfreitas/) and J. Payette.
+* [arXiv:1908.08441](https://arxiv.org/abs/1908.08441)
+
+###  5. From Steklov to Neumann, via homogenisation 
 * Joint with [A. Girouard](https://archimede.mat.ulaval.ca/agirouard/) and [A. Henrot](http://www.iecl.univ-lorraine.fr/~Antoine.Henrot/).
+* [arXiv:1906.09638](https://arxiv.org/abs/1906.09638)
 
 ## Accepted publications
 
-###  [Eigenvalue optimisation on flat tori and lattice points in anisotropically expanding domains](https://arxiv.org/abs/1809.01469)
-* To appear in the *Canadian Journal of Mathematics*
+###  4. Eigenvalue optimisation on flat tori and lattice points in anisotropically expanding domains
+* To appear in the *Canadian Journal of Mathematics*, (2019) 21 pp.
+* [arXiv:1809.01469](https://arxiv.org/abs/1809.01469)
 
-### Appendix of [A. Hassannezhad](https://asmahassannezhad.wordpress.com/), [A. Laptev](http://wwwf.imperial.ac.uk/~alaptev/), [Eigenvalue bounds of mixed Steklov problems](https://arxiv.org/abs/1712.00753)
+### 3. Appendix of [A. Hassannezhad](https://asmahassannezhad.wordpress.com/), [A. Laptev](http://wwwf.imperial.ac.uk/~alaptev/), Eigenvalue bounds of mixed Steklov problems
 * Joint with F. Ferrulli
 * To appear in *Communications in Contemporary Mathematics*
+* [arXiv:1712.00753](https://arxiv.org/abs/1712.00753)
 
-### [The Steklov Spectrum of Cuboids](https://arxiv.org/abs/1711.03075)
+### 2. The Steklov Spectrum of Cuboids
 * Joint with [A. Girouard](https://archimede.mat.ulaval.ca/agirouard/), [I. Polterovich](https://dms.umontreal.ca/~iossif/) and [A. Savo](http://www.dmmm.uniroma1.it/~alessandro.savo/)
 * Appeared in *Mathematika*, **65** (2019), pp. 272-310
+* [arXiv:1711.03075](https://arxiv.org/abs/1711.03075)
 
-### [A generalised Gauss circle problem and integrated density of states](https://arxiv.org/abs/1506.07115)
+### 1. A generalised Gauss circle problem and integrated density of states
 * Joint with [L. Parnovski](http://www.homepages.ucl.ac.uk/~ucahlep/)
 * Appeared in *Journal of Spectral Theory* **4**:(6) (2016) pp. 859-879.
+* [arXiv:1506.07115](https://arxiv.org/abs/1506.07115)
