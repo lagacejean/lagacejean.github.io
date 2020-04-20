@@ -7,6 +7,14 @@ author_profile: true
 
 ## Preprints
 
+### 8. Large Steklov eigenvalues via homogenisation on manifolds
+* Joint with [A. Girouard](https://archimede.mat.ulaval.ca/agirouard/)
+* [arXiv:2004.04044](https://arxiv.org/abs/2004.04044)
+
+###  7. Spectral invariants of Dirichlet-to-Neumann operators on surfaces
+* Joint with [S. St-Amant](https://www.simonstamant.com/recherche.html)
+* [arXiv:2003.02143](https://arxiv.org/abs/2003.02143)
+
 ###  6. Optimal unions of scaled copies of domains and Pólya's conjecture
 * Joint with [P. Freitas](https://www.math.tecnico.ulisboa.pt/~pfreitas/) and J. Payette.
 * [arXiv:1908.08441](https://arxiv.org/abs/1908.08441)
