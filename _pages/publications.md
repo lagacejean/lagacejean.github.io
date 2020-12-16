@@ -9,6 +9,7 @@ author_profile: true
 
 ### 9. Continuity of eigenvalues and shape optimisation of Laplace and Steklov problems
 * Joint with  [A. Girouard](https://archimede.mat.ulaval.ca/agirouard/) and [M. Karpukhin](https://sites.google.com/view/mkarpukh/home)
+* [arXiv:2004.10784](https://arxiv.org/abs/2004.10784)
 
 ### 8. Large Steklov eigenvalues via homogenisation on manifolds
 * Joint with [A. Girouard](https://archimede.mat.ulaval.ca/agirouard/)
