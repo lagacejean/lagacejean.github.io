@@ -7,7 +7,7 @@ author_profile: true
 
 ## Preprints
 
-### 10. The almost-periodic gauge transform --- An abstract scheme with applications to Dirac operators
+### 10. The almost-periodic gauge transform &mdash; An abstract scheme with applications to Dirac operators
 * Joint with [S. Morozov](https://www.mathematik.uni-muenchen.de/~morozov/), [L. Parnovski](http://www.homepages.ucl.ac.uk/~ucahlep/), B. Pfirsch and [R. Shterenberg](https://www.uab.edu/cas/mathematics/people/faculty-directory/roman-shterenberg)
 * [arXiv:2106.01888](https://arxiv.org/abs/2106.01888)
 
