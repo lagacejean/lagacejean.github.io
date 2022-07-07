@@ -7,6 +7,14 @@ author_profile: true
 
 ## Preprints
 
+### 12. Flexibility of Steklov eigenvalues via boundary homogenisation
+* Joint with [M. Karpukhin](https://sites.google.com/view/mkarpukh/home)
+* [arXiv:2207.02816](https://arxiv.org/abs/2207.02816)
+
+### 11. Weyl's law for the Steklov problem on surfaces with rough boundary
+* oint with [M. Karpukhin](https://sites.google.com/view/mkarpukh/home) and [I. Polterovich](https://dms.umontreal.ca/~iossif/)
+* [arXiv:2204.05294](https://arxiv.org/abs/2204.05294)
+
 ### 10. The almost-periodic gauge transform &mdash; An abstract scheme with applications to Dirac operators
 * Joint with [S. Morozov](https://www.mathematik.uni-muenchen.de/~morozov/), [L. Parnovski](http://www.homepages.ucl.ac.uk/~ucahlep/), B. Pfirsch and [R. Shterenberg](https://www.uab.edu/cas/mathematics/people/faculty-directory/roman-shterenberg)
 * [arXiv:2106.01888](https://arxiv.org/abs/2106.01888)
