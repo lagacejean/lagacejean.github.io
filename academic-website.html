@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Your Name — Mathematician</title>
+
+  <!--
+  ================================================================
+  HOW TO UPDATE THIS WEBSITE
+  ================================================================
+  This is a single self-contained HTML file. Update content by
+  finding the section comments (e.g. "== HERO ==") and editing
+  the text between the HTML tags. No coding knowledge needed.
+
+  QUICK CHECKLIST — search for these strings to update:
+    YOUR NAME        → Your full name
+    YOUR POSITION    → e.g. "Postdoctoral Research Fellow"
+    YOUR DEPARTMENT  → e.g. "Department of Pure Mathematics"
+    YOUR EMAIL       → your.name@cam.ac.uk
+    YOUR INSTITUTION → University of Cambridge
+    YOUR ORCID       → 0000-0000-0000-0000
+    YOUR BIO         → Replace the placeholder paragraphs
+    PHOTO_URL        → Replace with path/URL to your photo
+    SCHOLAR_URL      → Your Google Scholar profile URL
+    GITHUB_URL       → Your GitHub profile URL
+    TWITTER_URL      → Your Twitter/X profile URL
+    CV.PDF           → Path to your CV PDF file
+
+  TO ADD A PUBLICATION: copy one <article class="pub-entry">
+    block and paste it inside the correct year group.
+
+  TO ADD A YEAR GROUP: copy one <div class="pub-year-group">
+    block and change the year label.
+
+  TO ADD A TIMELINE ENTRY: copy one <li class="timeline-item">
+    and update the year, role, place, and note.
+
+  TO CHANGE ACCENT COLOR: find "--color-accent: #2563eb" in the
+    CSS and replace with any hex color you prefer.
+  ================================================================
+  -->
+
+  <meta name="description" content="Personal academic website of Dr. Your Name, mathematician working in spectral geometry.">
+  <meta property="og:title" content="Dr. Your Name — Spectral Geometry">
+  <meta property="og:description" content="Research in spectral geometry and analysis on manifolds.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts: Instrument Serif (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300..700&display=swap" rel="stylesheet">
+
+  <!-- KaTeX for LaTeX rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {delimiters:[{left:'\\\\(',right:'\\\\)',display:false},{left:'\\\\[',right:'\\\\]',display:true}]})"></script>
+
+<style>
+/* ================================================================
+   DESIGN TOKENS
+   ================================================================ */
+:root, [data-theme="light"] {
+  /* === CHANGE ACCENT COLOR HERE === */
+  --color-accent:           #1a3a5c;
+  --color-accent-mid:       #2563a8;
+  --color-accent-bright:    #3b82c4;
+  --color-accent-highlight: #dbeafe;
+
+  /* Surfaces — cool white */
+  --color-bg:               #f8f9fb;
+  --color-surface:          #ffffff;
+  --color-surface-2:        #f2f4f8;
+  --color-surface-offset:   #eaecf2;
+  --color-divider:          #dde1ea;
+  --color-border:           #cdd2de;
+
+  /* Text */
+  --color-text:             #0f1623;
+  --color-text-muted:       #4a5568;
+  --color-text-faint:       #9aa5b8;
+  --color-text-inverse:     #f8f9fb;
+
+  /* Radius */
+  --radius-sm:   0.375rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
+  --radius-2xl:  1.5rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(15,22,35,0.07), 0 1px 2px rgba(15,22,35,0.04);
+  --shadow-md: 0 4px 16px rgba(15,22,35,0.08), 0 2px 4px rgba(15,22,35,0.04);
+  --shadow-lg: 0 12px 40px rgba(15,22,35,0.12), 0 4px 8px rgba(15,22,35,0.05);
+
+  /* Spacing */
+  --sp-1: .25rem; --sp-2: .5rem;  --sp-3: .75rem; --sp-4: 1rem;
+  --sp-5: 1.25rem; --sp-6: 1.5rem; --sp-8: 2rem;  --sp-10: 2.5rem;
+  --sp-12: 3rem;   --sp-16: 4rem;  --sp-20: 5rem;  --sp-24: 6rem;
+
+  /* Type */
+  --text-xs:   clamp(0.75rem,  0.72rem + 0.15vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.83rem + 0.25vw, 1rem);
+  --text-base: clamp(1rem,     0.96rem + 0.2vw,  1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.6vw,  1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.2vw,  2.25rem);
+  --text-2xl:  clamp(2rem,     1.3rem  + 2.2vw,  3.25rem);
+  --text-3xl:  clamp(2.5rem,   1.2rem  + 3.8vw,  4.5rem);
+
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'Inter', -apple-system, system-ui, sans-serif;
+
+  --content-narrow:  640px;
+  --content-default: 960px;
+  --content-wide:    1200px;
+  --nav-h: 3.75rem;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --t: 200ms;
+}
+
+[data-theme="dark"] {
+  --color-accent:           #60a5fa;
+  --color-accent-mid:       #93c5fd;
+  --color-accent-bright:    #bfdbfe;
+  --color-accent-highlight: #1e3a5f;
+  --color-bg:               #0d1117;
+  --color-surface:          #161b22;
+  --color-surface-2:        #1c2330;
+  --color-surface-offset:   #1e2535;
+  --color-divider:          #2a3340;
+  --color-border:           #30404f;
+  --color-text:             #e6edf3;
+  --color-text-muted:       #8b949e;
+  --color-text-faint:       #484f58;
+  --color-text-inverse:     #0d1117;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.25);
+  --shadow-md: 0 4px 16px rgba(0,0,0,.35);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-accent: #60a5fa; --color-accent-mid: #93c5fd;
+    --color-accent-bright: #bfdbfe; --color-accent-highlight: #1e3a5f;
+    --color-bg: #0d1117; --color-surface: #161b22; --color-surface-2: #1c2330;
+    --color-surface-offset: #1e2535; --color-divider: #2a3340; --color-border: #30404f;
+    --color-text: #e6edf3; --color-text-muted: #8b949e; --color-text-faint: #484f58;
+    --color-text-inverse: #0d1117;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.25); --shadow-md: 0 4px 16px rgba(0,0,0,.35);
+    --shadow-lg: 0 12px 40px rgba(0,0,0,.5);
+  }
+}
+
+/* ================================================================
+   BASE RESET
+   ================================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + var(--sp-4));
+}
+body {
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+img, picture, svg { display: block; max-width: 100%; }
+h1, h2, h3, h4 { text-wrap: balance; line-height: 1.15; }
+p, li { text-wrap: pretty; max-width: 70ch; }
+a, button, [role="button"] {
+  transition: color var(--t) var(--ease), background var(--t) var(--ease),
+              border-color var(--t) var(--ease), box-shadow var(--t) var(--ease),
+              opacity var(--t) var(--ease);
+}
+button { cursor: pointer; background: none; border: none; color: inherit; }
+::selection { background: color-mix(in oklab, var(--color-accent) 22%, transparent); }
+:focus-visible { outline: 2px solid var(--color-accent-mid); outline-offset: 3px; border-radius: var(--radius-sm); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+.sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0; }
+
+/* ================================================================
+   SCROLL REVEAL
+   ================================================================ */
+.reveal { opacity: 1; }
+@supports (animation-timeline: scroll()) {
+  .reveal {
+    opacity: 0;
+    animation: do-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 75%;
+  }
+}
+@keyframes do-reveal { to { opacity: 1; } }
+
+/* ================================================================
+   LAYOUT
+   ================================================================ */
+.container {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: clamp(var(--sp-4), 5vw, var(--sp-12));
+}
+.container--wide  { max-width: var(--content-wide); }
+.container--narrow { max-width: var(--content-narrow); }
+.section { padding-block: clamp(var(--sp-16), 8vw, var(--sp-24)); }
+.section--alt { background: var(--color-surface); }
+
+.sec-label {
+  font-size: var(--text-xs); font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--color-accent-mid);
+  margin-bottom: var(--sp-2);
+}
+.sec-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  letter-spacing: -.025em;
+  color: var(--color-text);
+  margin-bottom: var(--sp-3);
+}
+.sec-sub {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 58ch;
+  margin-bottom: clamp(var(--sp-8), 4vw, var(--sp-16));
+}
+
+/* ================================================================
+   NAVIGATION
+   ================================================================ */
+.nav {
+  position: fixed; inset-block-start: 0; inset-inline: 0;
+  height: var(--nav-h); z-index: 200;
+  background: color-mix(in oklab, var(--color-bg) 88%, transparent);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--t) var(--ease);
+}
+.nav.scrolled { border-bottom-color: var(--color-divider); }
+.nav__inner {
+  max-width: var(--content-wide);
+  margin-inline: auto;
+  padding-inline: clamp(var(--sp-4), 5vw, var(--sp-12));
+  height: 100%;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6);
+}
+/* Logo */
+.nav__logo { display: flex; align-items: center; gap: var(--sp-2); text-decoration: none; color: var(--color-text); }
+.nav__logo-mark {
+  width: 30px; height: 30px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid color-mix(in oklab, var(--color-accent) 40%, transparent);
+  border-radius: var(--radius-md);
+  font-family: var(--font-display); font-size: .9rem; font-style: italic;
+  color: var(--color-accent-mid); flex-shrink: 0;
+  transition: border-color var(--t) var(--ease), color var(--t) var(--ease);
+}
+.nav__logo:hover .nav__logo-mark { border-color: var(--color-accent-mid); color: var(--color-accent); }
+.nav__logo-name {
+  font-family: var(--font-display); font-size: 1rem; font-weight: 400;
+  white-space: nowrap; letter-spacing: -.01em;
+}
+/* Nav links */
+.nav__links { display: flex; align-items: center; gap: var(--sp-1); list-style: none; }
+.nav__links a {
+  display: block; padding: var(--sp-2) var(--sp-3);
+  color: var(--color-text-muted); text-decoration: none;
+  font-size: var(--text-sm); font-weight: 500; border-radius: var(--radius-md);
+}
+.nav__links a:hover { color: var(--color-text); background: var(--color-surface-offset); }
+.nav__links a.active { color: var(--color-accent-mid); background: var(--color-accent-highlight); }
+/* Actions */
+.nav__actions { display: flex; align-items: center; gap: var(--sp-2); }
+.icon-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 2.25rem; height: 2.25rem;
+  border: 1px solid transparent; border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+}
+.icon-btn:hover { background: var(--color-surface-offset); border-color: var(--color-border); color: var(--color-text); }
+.btn-cv {
+  display: inline-flex; align-items: center; gap: var(--sp-1);
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--color-accent);
+  color: var(--color-text-inverse) !important;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm); font-weight: 600;
+  text-decoration: none; white-space: nowrap;
+}
+[data-theme="dark"] .btn-cv { color: var(--color-bg) !important; }
+.btn-cv:hover { opacity: .88; }
+/* Mobile */
+.ham { display: none; }
+.mobile-nav {
+  display: none; position: fixed;
+  top: var(--nav-h); inset-inline: 0;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-divider);
+  padding: var(--sp-4); z-index: 199;
+}
+.mobile-nav.open { display: block; }
+.mobile-nav ul { list-style: none; display: flex; flex-direction: column; gap: var(--sp-1); }
+.mobile-nav a {
+  display: block; padding: var(--sp-3) var(--sp-4);
+  font-size: var(--text-base); font-weight: 500;
+  color: var(--color-text); text-decoration: none;
+  border-radius: var(--radius-md);
+}
+.mobile-nav a:hover { background: var(--color-surface-offset); }
+@media (max-width: 720px) {
+  .nav__links, .btn-cv { display: none; }
+  .ham { display: flex; }
+}
+
+/* ================================================================
+   HERO
+   ================================================================ */
+.hero {
+  padding-block-start: calc(var(--nav-h) + clamp(var(--sp-16), 10vw, var(--sp-24)));
+  padding-block-end: clamp(var(--sp-16), 10vw, var(--sp-24));
+  position: relative; overflow: hidden;
+}
+/* Geometric grid background — mathematical feel */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--color-divider) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-divider) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: .3;
+}
+/* Radial accent glow */
+.hero::after {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 55% 65% at 70% 30%,
+    color-mix(in oklab, var(--color-accent-mid) 10%, transparent), transparent 70%);
+}
+.hero__inner {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr min(340px, 35%);
+  gap: clamp(var(--sp-8), 6vw, var(--sp-16));
+  align-items: center;
+}
+/* Left content */
+.hero__chip {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
+  background: var(--color-accent-highlight);
+  color: var(--color-accent-mid);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs); font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  margin-bottom: var(--sp-5);
+}
+.hero__chip-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.hero__name {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 400; letter-spacing: -.03em; line-height: 1.05;
+  color: var(--color-text);
+  margin-bottom: var(--sp-3);
+}
+.hero__name em { font-style: italic; color: var(--color-accent-mid); }
+.hero__role {
+  font-size: var(--text-lg); color: var(--color-text-muted);
+  font-weight: 300; margin-bottom: var(--sp-6);
+}
+.hero__tagline {
+  font-size: var(--text-base); color: var(--color-text-muted);
+  max-width: 52ch; line-height: 1.75; margin-bottom: var(--sp-8);
+}
+/* KaTeX inline snippet in hero */
+.hero__math {
+  display: inline-block;
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  margin-bottom: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+}
+.hero__actions { display: flex; gap: var(--sp-3); flex-wrap: wrap; align-items: center; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-6);
+  background: var(--color-accent);
+  color: #fff; text-decoration: none;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm); font-weight: 600;
+}
+.btn-primary:hover { opacity: .88; }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-6);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-muted); text-decoration: none;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm); font-weight: 500;
+}
+.btn-outline:hover { border-color: var(--color-accent-mid); color: var(--color-accent-mid); background: var(--color-accent-highlight); }
+/* Right: photo card */
+.hero__photo-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--sp-2);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.hero__photo-card::before {
+  content: '';
+  position: absolute; inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg,
+    color-mix(in oklab, var(--color-accent-mid) 25%, transparent),
+    transparent 50%);
+  z-index: -1;
+}
+.hero__photo {
+  width: 100%; aspect-ratio: 3/4;
+  border-radius: calc(var(--radius-2xl) - var(--sp-2));
+  object-fit: cover;
+  background: var(--color-surface-offset);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: var(--sp-3);
+  color: var(--color-text-faint);
+}
+.hero__photo-placeholder {
+  width: 100%; aspect-ratio: 3/4;
+  border-radius: calc(var(--radius-2xl) - var(--sp-2));
+  background: linear-gradient(160deg, var(--color-surface-2) 0%, var(--color-surface-offset) 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: var(--sp-3); color: var(--color-text-faint);
+}
+.hero__photo-placeholder span { font-size: var(--text-xs); max-width: 18ch; text-align: center; padding-inline: var(--sp-3); }
+/* Social strip under photo */
+.hero__socials {
+  display: flex; justify-content: center; gap: var(--sp-1);
+  padding: var(--sp-3) 0 var(--sp-1);
+}
+.hero__socials a {
+  display: flex; align-items: center; justify-content: center;
+  width: 2rem; height: 2rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text-faint);
+}
+.hero__socials a:hover { color: var(--color-accent-mid); background: var(--color-accent-highlight); }
+@media (max-width: 640px) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__photo-card { max-width: 220px; }
+}
+
+/* ================================================================
+   ABOUT
+   ================================================================ */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: clamp(var(--sp-10), 6vw, var(--sp-16));
+  align-items: start;
+}
+.about__body p {
+  font-size: var(--text-base); color: var(--color-text-muted);
+  line-height: 1.8; max-width: 65ch; margin-bottom: var(--sp-5);
+}
+.about__tags { display: flex; flex-wrap: wrap; gap: var(--sp-2); margin-top: var(--sp-6); }
+.tag {
+  display: inline-flex; align-items: center;
+  padding: var(--sp-1) var(--sp-3);
+  background: var(--color-accent-highlight);
+  color: var(--color-accent-mid);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs); font-weight: 600; letter-spacing: .02em;
+}
+.about__sidebar {}
+.info-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+}
+.info-row {
+  display: flex; flex-direction: column; gap: 2px;
+  padding-block: var(--sp-3);
+  border-bottom: 1px solid var(--color-divider);
+}
+.info-row:last-child { border-bottom: none; padding-bottom: 0; }
+.info-row:first-child { padding-top: 0; }
+.info-label { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--color-text-faint); }
+.info-value { font-size: var(--text-sm); color: var(--color-text-muted); font-weight: 500; }
+.info-value a { color: var(--color-accent-mid); text-decoration: none; }
+.info-value a:hover { text-decoration: underline; }
+@media (max-width: 720px) {
+  .about__grid { grid-template-columns: 1fr; }
+}
+
+/* ================================================================
+   RESEARCH
+   ================================================================ */
+.research__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr));
+  gap: var(--sp-5);
+}
+.res-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-7, 1.75rem);
+  box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; gap: var(--sp-4);
+  transition: box-shadow var(--t) var(--ease), transform var(--t) var(--ease), border-color var(--t) var(--ease);
+}
+.res-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--color-accent-mid); }
+.res-card__icon {
+  width: 2.75rem; height: 2.75rem;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--color-accent-highlight);
+  border-radius: var(--radius-lg);
+  color: var(--color-accent-mid);
+  flex-shrink: 0;
+}
+.res-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg); font-weight: 400;
+  letter-spacing: -.015em; color: var(--color-text);
+}
+.res-card__desc {
+  font-size: var(--text-sm); color: var(--color-text-muted);
+  line-height: 1.7; flex: 1;
+}
+.res-card__math {
+  font-size: var(--text-xs);
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-divider);
+  overflow-x: auto;
+}
+.res-card__tags { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
+
+/* ================================================================
+   PUBLICATIONS
+   ================================================================ */
+.pub-filter {
+  display: flex; gap: var(--sp-2); flex-wrap: wrap;
+  margin-bottom: clamp(var(--sp-8), 4vw, var(--sp-12));
+}
+.filter-btn {
+  padding: var(--sp-2) var(--sp-4);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs); font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--color-text-muted); background: var(--color-surface);
+  cursor: pointer;
+}
+.filter-btn:hover { border-color: var(--color-accent-mid); color: var(--color-accent-mid); }
+.filter-btn.active { background: var(--color-accent); color: #fff; border-color: var(--color-accent); }
+[data-theme="dark"] .filter-btn.active { color: var(--color-bg); }
+
+.pub-year-group { margin-bottom: var(--sp-10); }
+.pub-year-label {
+  font-family: var(--font-display);
+  font-size: var(--text-xl); font-weight: 400;
+  letter-spacing: -.025em;
+  color: var(--color-text-faint);
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--color-divider);
+  margin-bottom: var(--sp-4);
+}
+.pub-entry {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: var(--sp-4);
+  padding: var(--sp-5) var(--sp-3);
+  border-radius: var(--radius-lg);
+  transition: background var(--t) var(--ease);
+}
+.pub-entry:hover { background: var(--color-surface-offset); }
+.pub-num {
+  font-size: var(--text-xs); font-weight: 700; color: var(--color-text-faint);
+  padding-top: .18em; text-align: right;
+}
+.pub-body {}
+.pub-title {
+  font-size: var(--text-base); font-weight: 600;
+  color: var(--color-text); line-height: 1.4; margin-bottom: var(--sp-1);
+}
+.pub-title a { color: inherit; text-decoration: none; }
+.pub-title a:hover { color: var(--color-accent-mid); }
+.pub-authors { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--sp-1); }
+.pub-authors strong { color: var(--color-text); font-weight: 600; }
+.pub-venue { font-size: var(--text-sm); color: var(--color-text-faint); font-style: italic; margin-bottom: var(--sp-2); }
+.pub-links { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.pub-link {
+  display: inline-flex; align-items: center; gap: var(--sp-1);
+  padding: 3px var(--sp-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs); font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--color-text-muted); text-decoration: none;
+  background: var(--color-surface);
+}
+.pub-link:hover { border-color: var(--color-accent-mid); color: var(--color-accent-mid); background: var(--color-accent-highlight); }
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 2px var(--sp-2);
+  border-radius: var(--radius-full);
+  font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  vertical-align: middle; margin-left: var(--sp-2);
+}
+.badge--blue { background: #dbeafe; color: #1d4ed8; }
+[data-theme="dark"] .badge--blue { background: #1e3a5f; color: #93c5fd; }
+.badge--gold { background: #fef9c3; color: #854d0e; }
+[data-theme="dark"] .badge--gold { background: #312e00; color: #fde047; }
+
+/* ================================================================
+   CV / TIMELINE
+   ================================================================ */
+.cv__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--sp-8), 6vw, var(--sp-16));
+}
+.cv-col-label {
+  font-size: var(--text-xs); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .1em; color: var(--color-accent-mid);
+  margin-bottom: var(--sp-6);
+}
+.timeline { list-style: none; }
+.tl-item {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: var(--sp-4);
+  padding-bottom: var(--sp-8);
+  position: relative;
+}
+.tl-item:not(:last-child)::after {
+  content: ''; position: absolute;
+  left: 30px; top: 1.5rem; bottom: 0;
+  width: 1px; background: var(--color-divider);
+}
+.tl-year {
+  font-size: var(--text-xs); font-weight: 700;
+  color: var(--color-text-faint); text-align: right;
+  padding-top: .12em;
+}
+.tl-dot {
+  position: absolute; left: 27px; top: .3em;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--color-accent-mid);
+  border: 2px solid var(--color-bg);
+}
+.tl-body { padding-left: var(--sp-2); }
+.tl-role { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); margin-bottom: 2px; }
+.tl-place { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 2px; }
+.tl-note { font-size: var(--text-xs); color: var(--color-text-faint); }
+@media (max-width: 600px) {
+  .cv__grid { grid-template-columns: 1fr; }
+}
+
+/* ================================================================
+   CONTACT
+   ================================================================ */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--sp-8), 6vw, var(--sp-16));
+}
+.contact__body p {
+  font-size: var(--text-base); color: var(--color-text-muted);
+  line-height: 1.75; max-width: 52ch; margin-bottom: var(--sp-5);
+}
+.email-link {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  color: var(--color-accent-mid); text-decoration: none;
+  font-family: var(--font-display); font-size: var(--text-lg); font-weight: 400;
+  letter-spacing: -.01em;
+  border-bottom: 1px solid color-mix(in oklab, var(--color-accent-mid) 40%, transparent);
+  padding-bottom: 2px;
+  transition: color var(--t) var(--ease), border-color var(--t) var(--ease);
+}
+.email-link:hover { color: var(--color-accent); border-bottom-color: currentColor; }
+.contact__profiles { display: flex; flex-direction: column; gap: var(--sp-3); margin-top: var(--sp-8); }
+.profile-link {
+  display: flex; align-items: center; gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  text-decoration: none; color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+}
+.profile-link:hover { border-color: var(--color-accent-mid); box-shadow: var(--shadow-md); }
+.profile-link__icon { color: var(--color-accent-mid); flex-shrink: 0; }
+.profile-link__info { display: flex; flex-direction: column; gap: 1px; }
+.profile-link__platform { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: var(--color-text-faint); }
+.profile-link__handle { font-size: var(--text-sm); color: var(--color-text-muted); font-weight: 500; }
+/* Address box */
+.address-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-8);
+  box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column; gap: var(--sp-4);
+}
+.address-card__icon { color: var(--color-accent-mid); }
+.address-card p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; }
+.address-card strong { font-weight: 600; color: var(--color-text); }
+@media (max-width: 640px) {
+  .contact__grid { grid-template-columns: 1fr; }
+}
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.footer {
+  border-top: 1px solid var(--color-divider);
+  padding-block: var(--sp-8);
+}
+.footer__inner {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: var(--sp-3);
+}
+.footer__copy { font-size: var(--text-xs); color: var(--color-text-faint); }
+.footer__copy a { color: var(--color-text-muted); text-decoration: none; }
+.footer__copy a:hover { color: var(--color-accent-mid); }
+.footer__updated { font-size: var(--text-xs); color: var(--color-text-faint); font-style: italic; }
+
+/* ================================================================
+   BACK TO TOP
+   ================================================================ */
+.back-top {
+  position: fixed; bottom: var(--sp-6); right: var(--sp-6);
+  width: 2.5rem; height: 2.5rem;
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-full); box-shadow: var(--shadow-md);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-text-muted); text-decoration: none; z-index: 100;
+  opacity: 0; pointer-events: none; transform: translateY(8px);
+  transition: opacity var(--t) var(--ease), transform var(--t) var(--ease),
+              color var(--t) var(--ease), border-color var(--t) var(--ease);
+}
+.back-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.back-top:hover { color: var(--color-accent-mid); border-color: var(--color-accent-mid); }
+
+/* padding shim */
+.pt-7 { padding-top: 1.75rem; }
+</style>
+</head>
+
+<body>
+
+<!-- Skip link -->
+<a href="#main" style="position:absolute;top:var(--sp-2);left:var(--sp-2);padding:var(--sp-2) var(--sp-4);background:var(--color-accent);color:#fff;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;text-decoration:none;z-index:9999;transform:translateY(-200%);opacity:0;transition:transform .2s,opacity .2s" onfocus="this.style.transform='translateY(0)';this.style.opacity='1'" onblur="this.style.transform='translateY(-200%)';this.style.opacity='0'">Skip to content</a>
+
+<!-- ================================================================
+  == NAV ==
+  UPDATE: Your name in .nav__logo-name and the CV PDF link
+  ================================================================ -->
+<nav class="nav" id="nav" aria-label="Site navigation">
+  <div class="nav__inner">
+
+    <a href="#" class="nav__logo" aria-label="Home">
+      <!-- Inline SVG monogram logo: replace YN with your initials -->
+      <div class="nav__logo-mark" aria-hidden="true">YN</div>
+      <span class="nav__logo-name">YOUR NAME</span> <!-- UPDATE -->
+    </a>
+
+    <ul class="nav__links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#cv">CV</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav__actions">
+      <button class="icon-btn" data-theme-toggle aria-label="Toggle dark mode">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+      </button>
+      <!-- UPDATE: href to your CV PDF -->
+      <a href="./cv.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer" aria-label="Download CV PDF">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+        CV
+      </a>
+      <button class="icon-btn ham" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="mob-nav">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mob-nav" aria-label="Mobile navigation">
+  <ul role="list">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+<!-- ================================================================
+  == HERO ==
+  UPDATE: name, position, institution, tagline bio, and social links
+  ================================================================ -->
+<section class="hero" aria-label="Introduction">
+  <div class="container container--wide">
+    <div class="hero__inner">
+
+      <div class="hero__text">
+        <div class="hero__chip">
+          <span class="hero__chip-dot" aria-hidden="true"></span>
+          YOUR INSTITUTION · YOUR DEPARTMENT <!-- UPDATE -->
+        </div>
+
+        <!-- UPDATE: your name — the <em> tag italicises part of it for style -->
+        <h1 class="hero__name">Dr. <em>Your</em> Name</h1>
+
+        <!-- UPDATE: your position -->
+        <p class="hero__role">Postdoctoral Research Fellow in Spectral Geometry</p>
+
+        <!-- UPDATE: 1–2 sentence bio / research pitch -->
+        <p class="hero__tagline">
+          I study the relationship between the geometry of Riemannian manifolds and the spectral properties of their associated Laplace–Beltrami operators — asking when, and how precisely, you can <em>hear the shape of a drum</em>.
+        </p>
+
+        <!-- A decorative LaTeX snippet — update with something from your own work -->
+        <div class="hero__math" aria-label="Example formula from spectral geometry">
+          \(\lambda_k(M) \sim C_n \!\left(\frac{k}{\mathrm{vol}(M)}\right)^{\!2/n}\) &nbsp; <span style="color:var(--color-text-faint);font-size:var(--text-xs)">(Weyl's law)</span>
+        </div>
+
+        <div class="hero__actions">
+          <a href="#research" class="btn-primary">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            My Research
+          </a>
+          <a href="#publications" class="btn-outline">Publications</a>
+          <a href="#contact" class="btn-outline">Contact</a>
+        </div>
+      </div>
+
+      <!-- Photo card -->
+      <div>
+        <div class="hero__photo-card">
+          <!--
+            PHOTO: Replace the placeholder div below with:
+            <img src="./assets/photo.jpg" alt="Your Name"
+                 width="340" height="453" loading="lazy"
+                 style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:calc(var(--radius-2xl) - var(--sp-2))">
+          -->
+          <div class="hero__photo-placeholder" role="img" aria-label="Profile photo placeholder">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span>Add your photo — see the HTML comment above</span>
+          </div>
+          <!-- Social icons strip -->
+          <div class="hero__socials" aria-label="Profile links">
+            <!-- UPDATE: replace # with your URLs -->
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.484 3.872-3.722 0-2.016-1.284-3.722-3.828-3.722h-2.341z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="arXiv">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.406 0 0 6.637l.46.32 1.775-2.524v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.459-.32L4.406 0zm6.637 0L6.636 6.637l.46.32L8.87 4.433v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.46-.32L11.043 0zm6.637 0-4.407 6.637.46.32 1.775-2.524v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.46-.32L17.68 0z"/></svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+  == ABOUT ==
+  UPDATE: bio paragraphs, info card fields, research interest tags
+  ================================================================ -->
+<section class="section section--alt" id="about" aria-labelledby="about-h">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">About</p>
+      <h2 class="sec-title" id="about-h">Background &amp; Interests</h2>
+    </div>
+    <div class="about__grid">
+      <div class="about__body reveal">
+        <!-- UPDATE: Replace these paragraphs with your own biography -->
+        <p>
+          I am a [position] in the [Department] at [Institution]. My research lies in spectral geometry — the study of how the spectrum of the Laplace–Beltrami operator encodes and reflects the geometry of Riemannian manifolds. I am particularly interested in [specific sub-topic, e.g. isospectrality, heat invariants, spectral gaps on surfaces].
+        </p>
+        <p>
+          Before joining [current institution], I was at [previous institution], where I worked with [supervisor name] on [brief project description]. I received my PhD from [institution] in [year], where my thesis investigated [thesis topic].
+        </p>
+        <p>
+          My work draws on tools from [e.g. differential geometry, functional analysis, microlocal analysis, and analytic number theory]. I am interested in both the theoretical foundations and in concrete computations — including numerical experiments that can guide intuition and conjecture.
+        </p>
+
+        <div class="about__tags" role="list" aria-label="Research interests">
+          <!-- UPDATE: replace tags with your own topics -->
+          <span class="tag" role="listitem">Spectral Geometry</span>
+          <span class="tag" role="listitem">Laplace–Beltrami Operator</span>
+          <span class="tag" role="listitem">Heat Kernel Methods</span>
+          <span class="tag" role="listitem">Riemannian Manifolds</span>
+          <span class="tag" role="listitem">Isospectrality</span>
+          <span class="tag" role="listitem">Inverse Problems</span>
+          <span class="tag" role="listitem">Weyl Asymptotics</span>
+          <span class="tag" role="listitem">Spectral Gaps</span>
+        </div>
+      </div>
+
+      <aside class="about__sidebar reveal" aria-label="Quick information">
+        <div class="info-card">
+          <!-- UPDATE: all fields below -->
+          <div class="info-row">
+            <span class="info-label">Position</span>
+            <span class="info-value">YOUR POSITION</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Institution</span>
+            <span class="info-value">YOUR INSTITUTION</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Department</span>
+            <span class="info-value">YOUR DEPARTMENT</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Location</span>
+            <span class="info-value">Cambridge, UK</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Email</span>
+            <span class="info-value"><a href="mailto:YOUR EMAIL">YOUR EMAIL</a></span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">ORCID</span>
+            <span class="info-value"><a href="https://orcid.org/YOUR ORCID" target="_blank" rel="noopener noreferrer">YOUR ORCID</a></span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">PhD</span>
+            <span class="info-value">[Institution], [Year]</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+  == RESEARCH ==
+  UPDATE: overview text and each res-card.
+  Duplicate cards to add more projects; delete to remove.
+  The math snippet uses KaTeX — write LaTeX between \( and \).
+  ================================================================ -->
+<section class="section" id="research" aria-labelledby="research-h">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">Research</p>
+      <h2 class="sec-title" id="research-h">Projects &amp; Themes</h2>
+      <p class="sec-sub">
+        My research centres on the spectral theory of Riemannian manifolds and related geometries. Below are the main threads I am currently pursuing.
+        <!-- UPDATE the sentence above -->
+      </p>
+    </div>
+    <div class="research__grid">
+
+      <!-- CARD 1 — duplicate this block for each project/theme -->
+      <article class="res-card reveal" aria-label="Research theme 1">
+        <div class="res-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3 class="res-card__title">Isospectrality &amp; Inverse Problems</h3>
+        <p class="res-card__desc">
+          Can you hear the shape of a drum? I investigate families of isospectral manifolds — distinct geometries sharing the same Laplace spectrum — and what invariants beyond the spectrum are needed to determine shape uniquely.
+          <!-- UPDATE with your own description -->
+        </p>
+        <!-- Optional: a LaTeX formula relevant to the project -->
+        <div class="res-card__math" aria-label="Relevant formula">
+          \(\mathrm{Spec}(M) = \mathrm{Spec}(M') \not\Rightarrow M \cong M'\)
+        </div>
+        <div class="res-card__tags">
+          <span class="tag">Isospectrality</span>
+          <span class="tag">Inverse Problems</span>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="res-card reveal" aria-label="Research theme 2">
+        <div class="res-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M6 20V10l6-7 6 7v10"/><path d="M10 20v-5h4v5"/></svg>
+        </div>
+        <h3 class="res-card__title">Heat Kernel Asymptotics</h3>
+        <p class="res-card__desc">
+          The short-time asymptotic expansion of the heat kernel encodes curvature invariants of the manifold. I study higher-order heat invariants and their geometric content, particularly for manifolds with boundary or cone singularities.
+          <!-- UPDATE -->
+        </p>
+        <div class="res-card__math" aria-label="Heat trace expansion">
+          \(\mathrm{Tr}\,e^{-t\Delta} \sim (4\pi t)^{-n/2}\sum_{k=0}^{\infty} a_k \, t^k\)
+        </div>
+        <div class="res-card__tags">
+          <span class="tag">Heat Kernel</span>
+          <span class="tag">Curvature Invariants</span>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="res-card reveal" aria-label="Research theme 3">
+        <div class="res-card__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 class="res-card__title">Spectral Gaps &amp; Cheeger Constants</h3>
+        <p class="res-card__desc">
+          The spectral gap — the first nonzero eigenvalue \(\lambda_1\) — controls mixing rates and isoperimetric properties. I study sharp lower bounds via Cheeger-type inequalities and their optimisers on surfaces and higher-dimensional manifolds.
+          <!-- UPDATE -->
+        </p>
+        <div class="res-card__math" aria-label="Cheeger inequality">
+          \(\lambda_1(M) \geq \tfrac{1}{4} h(M)^2\)
+        </div>
+        <div class="res-card__tags">
+          <span class="tag">Spectral Gap</span>
+          <span class="tag">Cheeger Inequality</span>
+          <span class="tag">Optimisation</span>
+        </div>
+      </article>
+
+      <!-- ADD MORE CARDS BY COPYING THE BLOCK ABOVE -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+  == PUBLICATIONS ==
+  UPDATE: add/remove publications grouped by year.
+  To add a year: copy a full .pub-year-group div block.
+  To add a paper: copy a .pub-entry article block.
+  Bold your name with <strong>Your Name</strong> in pub-authors.
+  Badge options: badge--blue (preprint), badge--gold (award)
+  ================================================================ -->
+<section class="section section--alt" id="publications" aria-labelledby="pub-h">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">Publications</p>
+      <h2 class="sec-title" id="pub-h">Papers &amp; Preprints</h2>
+      <p class="sec-sub">
+        For a complete list see my
+        <a href="#" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-mid);text-decoration:none;border-bottom:1px solid color-mix(in oklab, var(--color-accent-mid) 40%, transparent)">Google Scholar</a>
+        or <a href="#" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-mid);text-decoration:none;border-bottom:1px solid color-mix(in oklab, var(--color-accent-mid) 40%, transparent)">arXiv</a> page.
+        <!-- UPDATE the links above (SCHOLAR_URL, arXiv URL) -->
+      </p>
+    </div>
+
+    <!-- ── YEAR 2025 ── -->
+    <div class="pub-year-group reveal">
+      <div class="pub-year-label" aria-label="Year 2025">2025</div>
+
+      <!-- PAPER 1 — copy this article block to add papers -->
+      <article class="pub-entry">
+        <span class="pub-num" aria-hidden="true">1</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              Your Paper Title: Spectral Results on [Object]
+            </a>
+            <span class="badge badge--blue">Preprint</span>
+          </h3>
+          <p class="pub-authors"><strong>Your Name</strong>, Co-Author One, Co-Author Two</p>
+          <p class="pub-venue"><em>arXiv</em>:2501.XXXXX, 2025.</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PAPER 2 -->
+      <article class="pub-entry">
+        <span class="pub-num" aria-hidden="true">2</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              Sharp Bounds on \(\lambda_1\) for Surfaces with Conical Singularities
+              <!-- You can use inline LaTeX in titles — it will be rendered by KaTeX -->
+            </a>
+          </h3>
+          <p class="pub-authors"><strong>Your Name</strong>, Collaborator Name</p>
+          <p class="pub-venue"><em>Journal of Spectral Theory</em>, to appear, 2025.</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">DOI</a>
+            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">PDF</a>
+            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /2025 -->
+
+    <!-- ── YEAR 2024 ── -->
+    <div class="pub-year-group reveal">
+      <div class="pub-year-label" aria-label="Year 2024">2024</div>
+
+      <article class="pub-entry">
+        <span class="pub-num" aria-hidden="true">3</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              Heat Invariants and Conformal Geometry on Compact Manifolds
+            </a>
+            <span class="badge badge--gold">Featured</span>
+          </h3>
+          <p class="pub-authors">Author A, <strong>Your Name</strong>, Author C</p>
+          <p class="pub-venue"><em>Mathematische Annalen</em>, 389(2):541–610, 2024.</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">DOI</a>
+            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">PDF</a>
+            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub-entry">
+        <span class="pub-num" aria-hidden="true">4</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              Isospectrality and Flat Tori: A New Family of Examples
+            </a>
+          </h3>
+          <p class="pub-authors"><strong>Your Name</strong>, Collaborator B</p>
+          <p class="pub-venue"><em>Communications in Analysis and Geometry</em>, 32(4):1001–1044, 2024.</p>
+          <div class="pub-links">
+            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">DOI</a>
+            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ADD MORE 2024 PAPERS HERE -->
+
+    </div><!-- /2024 -->
+
+    <!-- ADD MORE YEAR GROUPS BY COPYING THE BLOCK ABOVE -->
+
+  </div>
+</section>
+
+<!-- ================================================================
+  == CV ==
+  UPDATE: Timeline entries — duplicate .tl-item to add more.
+  Left column = Education; Right = Positions & Awards.
+  ================================================================ -->
+<section class="section" id="cv" aria-labelledby="cv-h">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">Curriculum Vitae</p>
+      <h2 class="sec-title" id="cv-h">Education &amp; Positions</h2>
+      <p class="sec-sub">
+        Download the full CV:
+        <!-- UPDATE href to your CV PDF -->
+        <a href="./cv.pdf" class="pub-link" style="margin-left:var(--sp-2)" target="_blank" rel="noopener noreferrer">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+      </p>
+    </div>
+    <div class="cv__grid">
+
+      <!-- LEFT: Education -->
+      <div class="reveal">
+        <p class="cv-col-label">Education</p>
+        <ol class="timeline" aria-label="Education history">
+
+          <!-- ENTRY — copy to add more -->
+          <li class="tl-item">
+            <span class="tl-year">2024</span>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-body">
+              <p class="tl-role">PhD in Mathematics</p>
+              <p class="tl-place">[Your University]</p>
+              <p class="tl-note">Thesis: "[Your thesis title]"<br>Supervisor: Prof. [Name]</p>
+            </div>
+          </li>
+
+          <li class="tl-item">
+            <span class="tl-year">2020</span>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-body">
+              <p class="tl-role">MMath / Part III Mathematics</p>
+              <p class="tl-place">University of Cambridge</p>
+              <p class="tl-note">Distinction. Essay: [Essay title]</p>
+            </div>
+          </li>
+
+          <li class="tl-item">
+            <span class="tl-year">2019</span>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-body">
+              <p class="tl-role">BSc (Hons) Mathematics</p>
+              <p class="tl-place">[Your University]</p>
+              <p class="tl-note">First Class Honours</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+
+      <!-- RIGHT: Positions & Awards -->
+      <div class="reveal">
+        <p class="cv-col-label">Positions &amp; Awards</p>
+        <ol class="timeline" aria-label="Positions and awards">
+
+          <li class="tl-item">
+            <span class="tl-year">2025</span>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-body">
+              <p class="tl-role">Postdoctoral Research Fellow</p>
+              <p class="tl-place">[Your Institution]</p>
+              <p class="tl-note">Funded by [Funding body]</p>
+            </div>
+          </li>
+
+          <li class="tl-item">
+            <span class="tl-year">2024</span>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-body">
+              <p class="tl-role">[Prize / Fellowship Name]</p>
+              <p class="tl-place">[Awarding body]</p>
+              <p class="tl-note">Brief description of the award</p>
+            </div>
+          </li>
+
+          <li class="tl-item">
+            <span class="tl-year">2023</span>
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-body">
+              <p class="tl-role">Visiting Researcher</p>
+              <p class="tl-place">[Institution], [Country]</p>
+              <p class="tl-note">Collaboration with [Name] on [topic]</p>
+            </div>
+          </li>
+
+          <!-- ADD MORE ENTRIES HERE -->
+
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+  == CONTACT ==
+  UPDATE: email, office address, and social profile links/handles
+  ================================================================ -->
+<section class="section section--alt" id="contact" aria-labelledby="contact-h">
+  <div class="container">
+    <div class="reveal">
+      <p class="sec-label">Contact</p>
+      <h2 class="sec-title" id="contact-h">Get in Touch</h2>
+    </div>
+    <div class="contact__grid">
+
+      <div class="contact__body reveal">
+        <p>I am happy to hear from prospective students, collaborators, and anyone curious about spectral geometry. Please reach out by email — I aim to respond within a few days.</p>
+        <!-- UPDATE: your email -->
+        <a href="mailto:YOUR EMAIL" class="email-link" aria-label="Send email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          YOUR EMAIL <!-- UPDATE -->
+        </a>
+
+        <div class="contact__profiles" aria-label="Online profiles">
+          <!-- UPDATE: replace # with your profile URLs and update handles -->
+          <a href="#" class="profile-link" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+            <div class="profile-link__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
+            </div>
+            <div class="profile-link__info">
+              <span class="profile-link__platform">Google Scholar</span>
+              <span class="profile-link__handle">Your Name</span>
+            </div>
+          </a>
+          <a href="#" class="profile-link" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+            <div class="profile-link__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.484 3.872-3.722 0-2.016-1.284-3.722-3.828-3.722h-2.341z"/></svg>
+            </div>
+            <div class="profile-link__info">
+              <span class="profile-link__platform">ORCID</span>
+              <span class="profile-link__handle">YOUR ORCID <!-- UPDATE --></span>
+            </div>
+          </a>
+          <a href="#" class="profile-link" target="_blank" rel="noopener noreferrer" aria-label="arXiv">
+            <div class="profile-link__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.406 0 0 6.637l.46.32 1.775-2.524v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.459-.32L4.406 0zm6.637 0L6.636 6.637l.46.32L8.87 4.433v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.46-.32L11.043 0zm6.637 0-4.407 6.637.46.32 1.775-2.524v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.46-.32L17.68 0z"/></svg>
+            </div>
+            <div class="profile-link__info">
+              <span class="profile-link__platform">arXiv</span>
+              <span class="profile-link__handle">arXiv author page</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="address-card reveal" aria-label="Office address">
+        <div class="address-card__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <!-- UPDATE: your office and address -->
+        <p>
+          <strong>YOUR DEPARTMENT</strong><br>
+          YOUR INSTITUTION<br>
+          [Building, Room Number]<br>
+          [Street Address]<br>
+          Cambridge, CB3 0WA, UK <!-- UPDATE postcode/city -->
+        </p>
+        <p style="color:var(--color-text-faint);font-size:var(--text-xs)">
+          Office hours: [Your hours, e.g. Tuesday &amp; Thursday 14:00–16:00, or by appointment]
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================================================================
+  == FOOTER ==
+  UPDATE: your name and email in the copyright line
+  ================================================================ -->
+<footer class="footer" role="contentinfo">
+  <div class="container footer__inner">
+    <p class="footer__copy">
+      © <span id="yr"></span> Your Name <!--UPDATE-->
+      · <a href="mailto:YOUR EMAIL">YOUR EMAIL</a> <!--UPDATE-->
+    </p>
+    <p class="footer__updated">Last updated May 2026</p> <!-- UPDATE periodically -->
+  </div>
+</footer>
+
+<!-- Back to top -->
+<a href="#" class="back-top" id="btt" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="18,15 12,9 6,15"/></svg>
+</a>
+
+<!-- ================================================================
+  JAVASCRIPT — no need to edit
+  ================================================================ -->
+<script>
+// Dark/light toggle
+(function () {
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  const moonSVG = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  const sunSVG  = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+
+  let dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  if (btn) btn.innerHTML = dark ? moonSVG : sunSVG;
+
+  if (btn) btn.addEventListener('click', function () {
+    dark = !dark;
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    btn.innerHTML = dark ? moonSVG : sunSVG;
+    btn.setAttribute('aria-label', 'Switch to ' + (dark ? 'light' : 'dark') + ' mode');
+  });
+})();
+
+// Nav scroll state + active link highlighting
+const nav = document.getElementById('nav');
+const btt = document.getElementById('btt');
+const secs = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('.nav__links a');
+
+window.addEventListener('scroll', function () {
+  const y = window.scrollY;
+  nav.classList.toggle('scrolled', y > 10);
+  btt.classList.toggle('show', y > 500);
+  let cur = '';
+  secs.forEach(function (s) { if (y >= s.offsetTop - 80) cur = s.id; });
+  links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+}, { passive: true });
+
+// Mobile hamburger
+(function () {
+  const ham = document.getElementById('ham');
+  const mob = document.getElementById('mob-nav');
+  ham.addEventListener('click', function () {
+    const open = mob.classList.toggle('open');
+    ham.setAttribute('aria-expanded', String(open));
+  });
+  mob.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      mob.classList.remove('open');
+      ham.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+// Footer year
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
