@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Your Name — Mathematician</title>
+  <title> Jean Lagacé </title>
 
   <!--
   ================================================================
@@ -41,8 +41,8 @@
   ================================================================
   -->
 
-  <meta name="description" content="Personal academic website of Dr. Your Name, mathematician working in spectral geometry.">
-  <meta property="og:title" content="Dr. Your Name — Spectral Geometry">
+  <meta name="description" content="Personal academic webpage for Jean Lagacé">
+  <meta property="og:title" content="Jean Lagacé">
   <meta property="og:description" content="Research in spectral geometry and analysis on manifolds.">
   <meta property="og:type" content="website">
 
@@ -51,11 +51,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300..700&display=swap" rel="stylesheet">
 
-  <!-- KaTeX for LaTeX rendering -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
-    onload="renderMathInElement(document.body, {delimiters:[{left:'\\\\(',right:'\\\\)',display:false},{left:'\\\\[',right:'\\\\]',display:true}]})"></script>
+<!-- KaTeX -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+      throwOnError: false
+    });
+  });
+</script>
 
 <style>
 /* ================================================================
@@ -63,10 +73,10 @@
    ================================================================ */
 :root, [data-theme="light"] {
   /* === CHANGE ACCENT COLOR HERE === */
-  --color-accent:           #1a3a5c;
-  --color-accent-mid:       #2563a8;
+  --color-accent:           #e12726;
+  --color-accent-mid:       #fc5e72;
   --color-accent-bright:    #3b82c4;
-  --color-accent-highlight: #dbeafe;
+  --color-accent-highlight: #cdd7dc;
 
   /* Surfaces — cool white */
   --color-bg:               #f8f9fb;
@@ -121,19 +131,19 @@
 }
 
 [data-theme="dark"] {
-  --color-accent:           #60a5fa;
-  --color-accent-mid:       #93c5fd;
+  --color-accent:           #fc5e72;
+  --color-accent-mid:       #fc5e72;
   --color-accent-bright:    #bfdbfe;
   --color-accent-highlight: #1e3a5f;
-  --color-bg:               #0d1117;
-  --color-surface:          #161b22;
+  --color-bg:               #0a2d50;
+  --color-surface:          #5f5550;
   --color-surface-2:        #1c2330;
   --color-surface-offset:   #1e2535;
   --color-divider:          #2a3340;
   --color-border:           #30404f;
-  --color-text:             #e6edf3;
-  --color-text-muted:       #8b949e;
-  --color-text-faint:       #484f58;
+  --color-text:             #cdd7dc;
+  --color-text-muted:       #cdd7dc;
+  --color-text-faint:       #fc5e72;
   --color-text-inverse:     #0d1117;
   --shadow-sm: 0 1px 3px rgba(0,0,0,.25);
   --shadow-md: 0 4px 16px rgba(0,0,0,.35);
@@ -662,9 +672,9 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
 }
 .tl-dot {
   position: absolute; left: 27px; top: .3em;
-  width: 8px; height: 8px; border-radius: 50%;
+  width: 0px; height: 0px; border-radius: 50%;
   background: var(--color-accent-mid);
-  border: 2px solid var(--color-bg);
+   border: 2px solid var(--color-bg);
 }
 .tl-body { padding-left: var(--sp-2); }
 .tl-role { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); margin-bottom: 2px; }
@@ -777,11 +787,11 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
 <nav class="nav" id="nav" aria-label="Site navigation">
   <div class="nav__inner">
 
-    <a href="#" class="nav__logo" aria-label="Home">
+   <!-- <a href="#" class="nav__logo" aria-label="Home">
       <!-- Inline SVG monogram logo: replace YN with your initials -->
-      <div class="nav__logo-mark" aria-hidden="true">YN</div>
-      <span class="nav__logo-name">YOUR NAME</span> <!-- UPDATE -->
-    </a>
+      <!--  <div class="nav__logo-mark" aria-hidden="true">JL</div>-->
+  <!--    <span class="nav__logo-name">Jean Lagacé</span> 
+   </a>-->
 
     <ul class="nav__links" role="list">
       <li><a href="#about">About</a></li>
@@ -834,24 +844,36 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
       <div class="hero__text">
         <div class="hero__chip">
           <span class="hero__chip-dot" aria-hidden="true"></span>
-          YOUR INSTITUTION · YOUR DEPARTMENT <!-- UPDATE -->
+          King's College London <!-- UPDATE -->
         </div>
 
         <!-- UPDATE: your name — the <em> tag italicises part of it for style -->
-        <h1 class="hero__name">Dr. <em>Your</em> Name</h1>
+        <h1 class="hero__name">Jean Lagacé</h1>
 
         <!-- UPDATE: your position -->
-        <p class="hero__role">Postdoctoral Research Fellow in Spectral Geometry</p>
+        <p class="hero__role">Lecturer in Pure Mathematics</p>
 
         <!-- UPDATE: 1–2 sentence bio / research pitch -->
         <p class="hero__tagline">
-          I study the relationship between the geometry of Riemannian manifolds and the spectral properties of their associated Laplace–Beltrami operators — asking when, and how precisely, you can <em>hear the shape of a drum</em>.
+          My research is in the spectral geometry of 
+          (pseudo)differential operators, such as the Laplacian or
+          the Dirichlet-to-Neumann map. I am interested in eigenvalue and
+          eigenfunctions asymptotics, universal bounds for the spectrum, as well
+          shape optimisation, as well as in problems in adjacent fields such as
+          homogenisation theory (especially on manifolds), geometric analysis,
+          harmonic analysis and quasi-periodic order.
+          <br> <br> 
+          I am an organiser of the <a href="https://spectralclouds.github.io/">
+              Spectral Geometry in the Clouds</a> seminar, along with Alexandre
+          Girouard and Laura Monk, you can join the mailing list for the seminar
+          <a href="https://www.jiscmail.ac.uk/cgi-bin/wa-jisc.exe?SUBED1=SPECTRAL-GEOMETRY-IN-THE-CLOUDS">
+              here </a>.
         </p>
 
-        <!-- A decorative LaTeX snippet — update with something from your own work -->
+        <!-- A decorative LaTeX snippet — update with something from your own work 
         <div class="hero__math" aria-label="Example formula from spectral geometry">
           \(\lambda_k(M) \sim C_n \!\left(\frac{k}{\mathrm{vol}(M)}\right)^{\!2/n}\) &nbsp; <span style="color:var(--color-text-faint);font-size:var(--text-xs)">(Weyl's law)</span>
-        </div>
+        </div>-->
 
         <div class="hero__actions">
           <a href="#research" class="btn-primary">
@@ -866,31 +888,28 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
       <!-- Photo card -->
       <div>
         <div class="hero__photo-card">
-          <!--
-            PHOTO: Replace the placeholder div below with:
-            <img src="./assets/photo.jpg" alt="Your Name"
+            <img src="./assets/jean_official_picture.jpg" alt="Jean Lagacé"
                  width="340" height="453" loading="lazy"
                  style="width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:calc(var(--radius-2xl) - var(--sp-2))">
-          -->
-          <div class="hero__photo-placeholder" role="img" aria-label="Profile photo placeholder">
+<!--          <div class="hero__photo-placeholder" role="img" aria-label="Profile photo placeholder">
             <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-            <span>Add your photo — see the HTML comment above</span>
-          </div>
+            <span>Add your photo — see the HTML comment above</span>-->
+</div>
           <!-- Social icons strip -->
           <div class="hero__socials" aria-label="Profile links">
             <!-- UPDATE: replace # with your URLs -->
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+            <a href="https://scholar.google.com/citations?hl=fr&view_op=list_works&gmla=AIqSsVty2QB6e_Vg2ynA7gimvrDZxnIpod6J43_3i4iDFrUvhz8RTp9dK30lYqfNpM07uDQcVtotIsjbt_rioEV-ByabrUbPa-_QOd7pn-XHZORvHWYmU1xkv7eCFiZWw_IrPU6lyTIyYfip1j1wyAzo_QgZxqlOfmkgrsttwVKTm565o9LNv-kW-Bw8eUM&user=xoJjgZsAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
+            <a href="https://orcid.org/my-orcid?orcid=0000-0001-7656-4433" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.484 3.872-3.722 0-2.016-1.284-3.722-3.828-3.722h-2.341z"/></svg>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="arXiv">
+            <a href="https://arxiv.org/search/math?searchtype=author&query=Lagac%C3%A9%2C+J" target="_blank" rel="noopener noreferrer" aria-label="arXiv">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.406 0 0 6.637l.46.32 1.775-2.524v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.459-.32L4.406 0zm6.637 0L6.636 6.637l.46.32L8.87 4.433v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.46-.32L11.043 0zm6.637 0-4.407 6.637.46.32 1.775-2.524v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.46-.32L17.68 0z"/></svg>
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+<!--            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
+</a>-->
           </div>
         </div>
       </div>
@@ -909,65 +928,84 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
       <p class="sec-label">About</p>
       <h2 class="sec-title" id="about-h">Background &amp; Interests</h2>
     </div>
-    <div class="about__grid">
+ <!--    <div class="about__grid">-->
       <div class="about__body reveal">
         <!-- UPDATE: Replace these paragraphs with your own biography -->
         <p>
-          I am a [position] in the [Department] at [Institution]. My research lies in spectral geometry — the study of how the spectrum of the Laplace–Beltrami operator encodes and reflects the geometry of Riemannian manifolds. I am particularly interested in [specific sub-topic, e.g. isospectrality, heat invariants, spectral gaps on surfaces].
+          I am a Lecturer in Pure Mathematics in the Department of Mathematics
+          at King's College London, since 2022. Before that, I was briefly at
+          the University of Bristol, and at University College London
+          where I held postdoctoral positions. I received my PhD from the
+          Université de Montréal in 2018, under the supervision of Iosif
+          Polterovich.
+          </p>
+
+          <p>
+          My research lies in spectral geometry in the large. I am interested in
+          how the spectrum of the Laplacian, or of the Steklov problem for
+          instance, encode
+          geometric and regularity information of Riemmannian manifolds. My two
+          main interests are in spectral asymptotics, especially with low
+          regularity, and explicit geometric control, and on using
+          homogenisation of the metrics and of domains as a control mechanism
+          for the spectrum.
         </p>
         <p>
-          Before joining [current institution], I was at [previous institution], where I worked with [supervisor name] on [brief project description]. I received my PhD from [institution] in [year], where my thesis investigated [thesis topic].
-        </p>
-        <p>
-          My work draws on tools from [e.g. differential geometry, functional analysis, microlocal analysis, and analytic number theory]. I am interested in both the theoretical foundations and in concrete computations — including numerical experiments that can guide intuition and conjecture.
+          My work draws on tools from homogenisation theory, functional analysis, geometric analysis,
+          analytic number theory, harmonic analysis and microlocal analysis. My
+          interests in spectral geometry have led me to also occasionally work
+          in these fields for their own sake.
         </p>
 
         <div class="about__tags" role="list" aria-label="Research interests">
           <!-- UPDATE: replace tags with your own topics -->
           <span class="tag" role="listitem">Spectral Geometry</span>
-          <span class="tag" role="listitem">Laplace–Beltrami Operator</span>
-          <span class="tag" role="listitem">Heat Kernel Methods</span>
-          <span class="tag" role="listitem">Riemannian Manifolds</span>
-          <span class="tag" role="listitem">Isospectrality</span>
-          <span class="tag" role="listitem">Inverse Problems</span>
-          <span class="tag" role="listitem">Weyl Asymptotics</span>
-          <span class="tag" role="listitem">Spectral Gaps</span>
-        </div>
-      </div>
+          <span class="tag" role="listitem">Weyl asymptotics</span>
+          <span class="tag" role="listitem">Steklov problem</span>
+          <span class="tag" role="listitem">Homogenisation theory</span>e
 
+          <span class="tag" role="listitem">Geometric analysis</span>
+          <span class="tag" role="listitem">Shape optimisation</span>
+          <span class="tag" role="listitem">Quasi-periodic problems</span>
+          <span class="tag" role="listitem">Distribution of discrete sets</span>
+          <!--   </div> -->
+      </div>
+<!--
       <aside class="about__sidebar reveal" aria-label="Quick information">
         <div class="info-card">
-          <!-- UPDATE: all fields below -->
+           UPDATE: all fields below 
           <div class="info-row">
             <span class="info-label">Position</span>
-            <span class="info-value">YOUR POSITION</span>
+            <span class="info-value">Lecturer in Pure Mathematics</span>
           </div>
           <div class="info-row">
             <span class="info-label">Institution</span>
-            <span class="info-value">YOUR INSTITUTION</span>
+            <span class="info-value">King's College London</span>
           </div>
           <div class="info-row">
             <span class="info-label">Department</span>
-            <span class="info-value">YOUR DEPARTMENT</span>
+            <span class="info-value">Department of Mathematics</span>
           </div>
           <div class="info-row">
             <span class="info-label">Location</span>
-            <span class="info-value">Cambridge, UK</span>
+            <span class="info-value">London, UK</span>
           </div>
           <div class="info-row">
             <span class="info-label">Email</span>
-            <span class="info-value"><a href="mailto:YOUR EMAIL">YOUR EMAIL</a></span>
+            <span class="info-value"><a
+                    href="mailto:jean.lagace@kcl.ac.uk">first name 'dot' last
+                    name 'at' kcl.ac.uk, no accents</a></span>
           </div>
           <div class="info-row">
             <span class="info-label">ORCID</span>
-            <span class="info-value"><a href="https://orcid.org/YOUR ORCID" target="_blank" rel="noopener noreferrer">YOUR ORCID</a></span>
+            <span class="info-value"><a href="https://orcid.org/0000-0001-7656-4433" target="_blank" rel="noopener noreferrer">0000-0001-7656-4433</a></span>
           </div>
           <div class="info-row">
             <span class="info-label">PhD</span>
-            <span class="info-value">[Institution], [Year]</span>
+            <span class="info-value">Université de Montréal, 2018</span>
           </div>
         </div>
-      </aside>
+      </aside> -->
     </div>
   </div>
 </section>
@@ -978,82 +1016,69 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
   Duplicate cards to add more projects; delete to remove.
   The math snippet uses KaTeX — write LaTeX between \( and \).
   ================================================================ -->
-<section class="section" id="research" aria-labelledby="research-h">
+ <!-- <section class="section" id="research" aria-labelledby="research-h">
   <div class="container">
     <div class="reveal">
       <p class="sec-label">Research</p>
       <h2 class="sec-title" id="research-h">Projects &amp; Themes</h2>
       <p class="sec-sub">
-        My research centres on the spectral theory of Riemannian manifolds and related geometries. Below are the main threads I am currently pursuing.
-        <!-- UPDATE the sentence above -->
+        Here are some of my current research threads
       </p>
     </div>
     <div class="research__grid">
 
-      <!-- CARD 1 — duplicate this block for each project/theme -->
       <article class="res-card reveal" aria-label="Research theme 1">
         <div class="res-card__icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
         </div>
-        <h3 class="res-card__title">Isospectrality &amp; Inverse Problems</h3>
+        <h3 class="res-card__title">Homogenisation as a control mechanism</h3>
         <p class="res-card__desc">
-          Can you hear the shape of a drum? I investigate families of isospectral manifolds — distinct geometries sharing the same Laplace spectrum — and what invariants beyond the spectrum are needed to determine shape uniquely.
-          <!-- UPDATE with your own description -->
+
+          I use homogenised limits at the critical scale (the scale of the
+          so-called 'strange terms') in order to build manifolds with prescribed
+          spectral behaviour. For instance, we created sequences where the
+          Steklov spectrum approximates weighted Laplace spectrum, and this was
+          used to saturate geometric bounds for Steklov eigenvalues, and in turn
+          prove the existence of free boundary minimal surfaces with many
+          boundary components.
         </p>
-        <!-- Optional: a LaTeX formula relevant to the project -->
         <div class="res-card__math" aria-label="Relevant formula">
-          \(\mathrm{Spec}(M) = \mathrm{Spec}(M') \not\Rightarrow M \cong M'\)
+            \(\operatorname{Per}(\partial \Omega_\varepsilon)
+            \sigma_{k}^{(\varepsilon)}(\Omega_\varepsilon)
+            \xrightarrow{\varepsilon \to 0} \operatorname{Area}(\Omega)
+            \lambda_k(\Omega)\)
         </div>
         <div class="res-card__tags">
-          <span class="tag">Isospectrality</span>
-          <span class="tag">Inverse Problems</span>
+          <span class="tag">Shape optimisation</span>
+          <span class="tag">Homogenisation theory</span>
         </div>
       </article>
 
-      <!-- CARD 2 -->
       <article class="res-card reveal" aria-label="Research theme 2">
         <div class="res-card__icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M6 20V10l6-7 6 7v10"/><path d="M10 20v-5h4v5"/></svg>
         </div>
-        <h3 class="res-card__title">Heat Kernel Asymptotics</h3>
+        <h3 class="res-card__title">Low regularity Weyl laws</h3>
         <p class="res-card__desc">
-          The short-time asymptotic expansion of the heat kernel encodes curvature invariants of the manifold. I study higher-order heat invariants and their geometric content, particularly for manifolds with boundary or cone singularities.
-          <!-- UPDATE -->
+        The remainder term in Weyl's law can be sensitive to the regularity of
+        the metric or of the boundary. I am interested in how we can detect low
+        regularity of the boundary, or regions of high curvature from looking at
+        asymptotics of eigenvalues (Weyl's law) or of the spectral projectors
+        (local Weyl's law).
         </p>
         <div class="res-card__math" aria-label="Heat trace expansion">
-          \(\mathrm{Tr}\,e^{-t\Delta} \sim (4\pi t)^{-n/2}\sum_{k=0}^{\infty} a_k \, t^k\)
+            \(N(\lambda) \sim_{\lambda \to \infty} C_d
+            \operatorname{Vol}(\Omega) \lambda^{d/2} + R(\Omega;\lambda)\)
         </div>
         <div class="res-card__tags">
-          <span class="tag">Heat Kernel</span>
-          <span class="tag">Curvature Invariants</span>
+          <span class="tag">Spectral asymptotics</span>
+          <span class="tag">Inverse problems</span>
         </div>
       </article>
-
-      <!-- CARD 3 -->
-      <article class="res-card reveal" aria-label="Research theme 3">
-        <div class="res-card__icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3 class="res-card__title">Spectral Gaps &amp; Cheeger Constants</h3>
-        <p class="res-card__desc">
-          The spectral gap — the first nonzero eigenvalue \(\lambda_1\) — controls mixing rates and isoperimetric properties. I study sharp lower bounds via Cheeger-type inequalities and their optimisers on surfaces and higher-dimensional manifolds.
-          <!-- UPDATE -->
-        </p>
-        <div class="res-card__math" aria-label="Cheeger inequality">
-          \(\lambda_1(M) \geq \tfrac{1}{4} h(M)^2\)
-        </div>
-        <div class="res-card__tags">
-          <span class="tag">Spectral Gap</span>
-          <span class="tag">Cheeger Inequality</span>
-          <span class="tag">Optimisation</span>
-        </div>
-      </article>
-
-      <!-- ADD MORE CARDS BY COPYING THE BLOCK ABOVE -->
 
     </div>
   </div>
-</section>
+ </section> --> 
 
 <!-- ================================================================
   == PUBLICATIONS ==
@@ -1071,50 +1096,98 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
       <p class="sec-sub">
         For a complete list see my
         <a href="#" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-mid);text-decoration:none;border-bottom:1px solid color-mix(in oklab, var(--color-accent-mid) 40%, transparent)">Google Scholar</a>
-        or <a href="#" target="_blank" rel="noopener noreferrer" style="color:var(--color-accent-mid);text-decoration:none;border-bottom:1px solid color-mix(in oklab, var(--color-accent-mid) 40%, transparent)">arXiv</a> page.
+        or <a href="#" target="_blank" rel="noopener noreferrer"
+        style="color:var(--color-accent-mid);text-decoration:none;border-bottom:1px
+        solid color-mix(in oklab, var(--color-accent-mid) 40%,
+        transparent)">arXiv</a> page.
         <!-- UPDATE the links above (SCHOLAR_URL, arXiv URL) -->
-      </p>
+    </p>
     </div>
-
-    <!-- ── YEAR 2025 ── -->
+    <!-- ── YEAR 2026 ── -->
     <div class="pub-year-group reveal">
-      <div class="pub-year-label" aria-label="Year 2025">2025</div>
+      <div class="pub-year-label" aria-label="Year 2026">2026</div>
 
-      <!-- PAPER 1 — copy this article block to add papers -->
       <article class="pub-entry">
-        <span class="pub-num" aria-hidden="true">1</span>
+        <span class="pub-num" aria-hidden="true">16</span>
         <div class="pub-body">
           <h3 class="pub-title">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              Your Paper Title: Spectral Results on [Object]
-            </a>
+              Metric-uniform spectral inequality for the Laplacian on manifolds
+              with bounded sectional curvature
             <span class="badge badge--blue">Preprint</span>
           </h3>
-          <p class="pub-authors"><strong>Your Name</strong>, Co-Author One, Co-Author Two</p>
-          <p class="pub-venue"><em>arXiv</em>:2501.XXXXX, 2025.</p>
+          <p class="pub-authors">Alix Deleporte, Jean Lagacé and Marc Rouveyrol</p>
+          <p class="pub-venue"><em>arXiv</em>:2601.16176, 2026.</p>
           <div class="pub-links">
-            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
-            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">PDF</a>
+            <a href="https://arxiv.org/abs/2601.16176" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
           </div>
         </div>
       </article>
 
       <!-- PAPER 2 -->
       <article class="pub-entry">
-        <span class="pub-num" aria-hidden="true">2</span>
+        <span class="pub-num" aria-hidden="true">15</span>
         <div class="pub-body">
           <h3 class="pub-title">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              Sharp Bounds on \(\lambda_1\) for Surfaces with Conical Singularities
-              <!-- You can use inline LaTeX in titles — it will be rendered by KaTeX -->
-            </a>
+              Canonical foliation of bubblesheets
           </h3>
-          <p class="pub-authors"><strong>Your Name</strong>, Collaborator Name</p>
-          <p class="pub-venue"><em>Journal of Spectral Theory</em>, to appear, 2025.</p>
+          <p class="pub-authors">Jean Lagacé and Stephen Lynch</p>
+          <p class="pub-venue"><em>Calculus of Variations and PDEs</em>,
+          65(15):28 pp, 2026.</p>
           <div class="pub-links">
-            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">DOI</a>
-            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">PDF</a>
-            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+            <a
+                href="https://link.springer.com/article/10.1007/s00526-025-03180-6"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/2411.14340" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /2026 -->
+
+    <!-- ── YEAR 2025 ── -->
+    <div class="pub-year-group reveal">
+      <div class="pub-year-label" aria-label="Year 2025">2025</div>
+
+
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">14</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+              Sharp density discrepancy for cut and project sets: an approach
+              via lattice point counting
+          </h3>
+          <p class="pub-authors">Henna Koivusalo and Jean Lagacé</p>
+          <p class="pub-venue"><em>Monatshefte für Mathematik</em>,
+          208:397&ndash;444, 2025.</p>
+          <div class="pub-links">
+            <a
+                href="https://link.springer.com/article/10.1007/s00605-025-02135-5"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/2401.01803" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">13</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+              Spectral decomposition and Siegel&ndash;Veech transforms for
+              strata: the case of marked tori
+          </h3>
+          <p class="pub-authors">Jayadev Athreya, Jean Lagacé, Martin Möller and
+          Martin Raum</p>
+          <p class="pub-venue"><em>Journal of Spectral Theory</em>,
+          15(2):895&ndash;959, 2025.</p>
+          <div class="pub-links">
+            <a
+                href="https://ems.press/journals/jst/articles/14298746"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/2404.06597" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
           </div>
         </div>
       </article>
@@ -1126,47 +1199,284 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
       <div class="pub-year-label" aria-label="Year 2024">2024</div>
 
       <article class="pub-entry">
-        <span class="pub-num" aria-hidden="true">3</span>
+          <span class="pub-num" aria-hidden="true">12</span>
         <div class="pub-body">
           <h3 class="pub-title">
             <a href="#" target="_blank" rel="noopener noreferrer">
-              Heat Invariants and Conformal Geometry on Compact Manifolds
+              Flexibility of Steklov eigenvalues via boundary homogenisation
             </a>
-            <span class="badge badge--gold">Featured</span>
+            <span class="badge badge--gold">CRM-ISM-AMQ Prize</span>
           </h3>
-          <p class="pub-authors">Author A, <strong>Your Name</strong>, Author C</p>
-          <p class="pub-venue"><em>Mathematische Annalen</em>, 389(2):541–610, 2024.</p>
+          <p class="pub-authors">Mikhail Karpukhin and Jean Lagacé</p>
+          <p class="pub-venue"><em>Annales Mathématiques du Québec</em>, 48:pp.
+          175&ndash;186, 2024.</p>
           <div class="pub-links">
-            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">DOI</a>
-            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">PDF</a>
-            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+            <a
+                href="https://link.springer.com/article/10.1007/s40316-022-00207-8"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/aba/2207.02816" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+
+    </div><!-- /2024 -->
+
+
+    <div class="pub-year-group reveal">
+      <div class="pub-year-label" aria-label="Year 2023">2023</div>
+
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">11</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+              Weyl's law for the Steklov problem on surfaces with rough
+              boundary
+          </h3>
+          <p class="pub-authors">Mikhail Karpukhin, Jean Lagacé and Iosif
+          Polterovich</p>
+          <p class="pub-venue"><em>Archive for Rational Mechanics and Analysis</em>,
+          247(77):20 pp., 2023.</p>
+          <div class="pub-links">
+            <a
+                href="https://link.springer.com/article/10.1007/s00205-023-01912-6"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/2204.05294" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">10</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+              Homogenisation as control: Mimicking eigenvalue problems
+          </h3>
+          <p class="pub-authors">Jean Lagacé</p>
+          <p class="pub-venue"><em>Oberwolfach Reports</em>,
+          36(2023):2088&ndash;2091 2023.</p>
+          <div class="pub-links">
+            <a
+                href="https://publications.mfo.de/bitstream/handle/mfo/4070/OWR_2023_36.pdf?sequence=4&isAllowed=y"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Report</a>
+          </div>
+        </div>
+      </article>
+
+
+    <div class="pub-year-group reveal">
+      <div class="pub-year-label" aria-label="Year 2023">2023</div>
+
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">9</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+              The almost-periodic gauge transform&mdash;An abstract scheme with
+              applications to Dirac operators
+          </h3>
+          <p class="pub-authors">Jean Lagacé, Sergey Morozov, Leonid Parnovski,
+          Bernhard Pfirsch and Roman Shterenberg</p>
+          <p class="pub-venue"><em>Annales Henri-Lebesgue, 6:pp.1031&ndash;1113,
+          2023.</p>
+          <div class="pub-links">
+            <a
+                href="https://www.numdam.org/articles/10.5802/ahl.184/"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/2106.01888" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /2023 -->
+
+
+    <div class="pub-year-group reveal">
+      <div class="pub-year-label" aria-label="Year 2021">2021</div>
+
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">8</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+              Spectral Invariants of Dirichlet-to-Neumann operators on surfaces
+          </h3>
+          <p class="pub-authors">Jean Lagacé and Simon St-Amant</p>
+          <p class="pub-venue"><em>Journal of Spectral Theory,
+              11(4):1627&ndash;1667,
+          2021.</p>
+          <div class="pub-links">
+            <a
+                href="https://ems.press/journals/jst/articles/3298911"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/2003.02143" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">7</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+              Large Steklov eigenvalues via homogenisation on manifolds
+          </h3>
+          <p class="pub-authors">Alexandre Girouard and Jean Lagacé</p>
+          <p class="pub-venue"><em>Inventiones Mathematicae,
+              226:1011&ndash;1056, 2021.</p>
+          <div class="pub-links">
+            <a
+                href="https://link.springer.com/article/10.1007/s00222-021-01058-w"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/2004.04044" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
           </div>
         </div>
       </article>
 
       <article class="pub-entry">
-        <span class="pub-num" aria-hidden="true">4</span>
+          <span class="pub-num" aria-hidden="true">6</span>
         <div class="pub-body">
           <h3 class="pub-title">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              Isospectrality and Flat Tori: A New Family of Examples
-            </a>
+              Continuity of eigenvalues and shape optimisation for Laplace and
+              Steklov problems
           </h3>
-          <p class="pub-authors"><strong>Your Name</strong>, Collaborator B</p>
-          <p class="pub-venue"><em>Communications in Analysis and Geometry</em>, 32(4):1001–1044, 2024.</p>
+          <p class="pub-authors">Alexandre Girouard, Mikhail Karpukhin and Jean Lagacé</p>
+          <p class="pub-venue"><em>Geometric and Functional Analysis,
+              31:513&ndash;561, 2021.</p>
           <div class="pub-links">
-            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">DOI</a>
-            <a href="#" class="pub-link" target="_blank" rel="noopener noreferrer">PDF</a>
+            <a
+                href="https://link.springer.com/article/10.1007/s00039-021-00573-5"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/2004.10784" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
           </div>
         </div>
       </article>
 
-      <!-- ADD MORE 2024 PAPERS HERE -->
 
-    </div><!-- /2024 -->
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">5</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+              Optimal unions of scaled copies of domains and P&oacute;lya's
+              conjecture
+          </h3>
+          <p class="pub-authors">Pedro Freitas, Jean Lagacé and Jordan Payette</p>
+          <p class="pub-venue"><em>Arkiv för Matematik,
+              59(1):11&ndash;51, 2021.</p>
+          <div class="pub-links">
+            <a
+                href="https://projecteuclid.org/journals/arkiv-for-matematik/volume-59/issue-1/Optimal-unions-of-scaled-copies-of-domains-and-P%c3%b3lyas-conjecture/10.4310/ARKIV.2021.v59.n1.a2.full"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/1908.08441" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
 
-    <!-- ADD MORE YEAR GROUPS BY COPYING THE BLOCK ABOVE -->
 
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">4</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+              From Steklov to Neumann via homogenisation
+          </h3>
+          <p class="pub-authors">Alexandre Girouard, Antoine Henrot and Jean Lagacé</p>
+          <p class="pub-venue"><em>Archive for Rational Mechanics and Analysis,
+              239(2):981&ndash;1023, 2021.</p>
+          <div class="pub-links">
+            <a
+                href="https://link.springer.com/article/10.1007/s00205-020-01588-2"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/1906.09638" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+    </div> <!-- /2021 -->
+
+    <div class="pub-year-group reveal">
+      <div class="pub-year-label" aria-label="Year 2020">2020</div>
+
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">3</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+             	Eigenvalue optimisation on flat tori and lattice points in anisotropically expanding domains 
+          </h3>
+          <p class="pub-authors">Jean Lagacé</p>
+          <p class="pub-venue"><em>Canadian Journal of Mathematics
+              72(4):967&ndash;987, 2020.</p>
+          <div class="pub-links">
+            <a
+                href="https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/eigenvalue-optimisation-on-flat-tori-and-lattice-points-in-anisotropically-expanding-domains/351BC9BC029E0FE2B10FFF081C20A50D"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/1809.01469" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+
+    </div> <!-- /2020 -->
+
+
+    <div class="pub-year-group reveal">
+      <div class="pub-year-label" aria-label="Year 2019">2019</div>
+
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">2</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+              The Steklov spectrum of cuboids
+          </h3>
+          <p class="pub-authors">Alexandre Girouard, Jean Lagacé, Iosif
+          Polterovich and Alessandro Savo</p>
+          <p class="pub-venue"><em>Mathematika,
+              65(2):272&ndash;310, 2019.</p>
+          <div class="pub-links">
+            <a
+                href="https://londmathsoc.onlinelibrary.wiley.com/doi/full/10.1112/S0025579318000414"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/1711.03075" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+
+
+    </div> <!-- /2019 -->
+
+
+    <div class="pub-year-group reveal">
+      <div class="pub-year-label" aria-label="Year 2020">2016</div>
+
+      <article class="pub-entry">
+          <span class="pub-num" aria-hidden="true">1</span>
+        <div class="pub-body">
+          <h3 class="pub-title">
+              A generalised Gauss circle problem and integrated density of
+              states
+          </h3>
+          <p class="pub-authors">Jean Lagacé and Leonid Parnovski</p>
+          <p class="pub-venue"><em>Mathematika,
+              6(4):859&ndash;879, 2016.</p>
+          <div class="pub-links">
+            <a
+                href="https://ems.press/journals/jst/articles/14415"
+                class="pub-link" target="_blank" rel="noopener
+                noreferrer">Journal</a>
+            <a href="https://arxiv.org/abs/1506.07115" class="pub-link" target="_blank" rel="noopener noreferrer">arXiv</a>
+          </div>
+        </div>
+      </article>
+    </div> <!-- /2016 -->
   </div>
 </section>
 
@@ -1183,7 +1493,7 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
       <p class="sec-sub">
         Download the full CV:
         <!-- UPDATE href to your CV PDF -->
-        <a href="./cv.pdf" class="pub-link" style="margin-left:var(--sp-2)" target="_blank" rel="noopener noreferrer">
+        <a href="./assets/cv_jean_lagace.pdf" class="pub-link" style="margin-left:var(--sp-2)" target="_blank" rel="noopener noreferrer">
           <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download PDF
         </a>
@@ -1198,32 +1508,23 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
 
           <!-- ENTRY — copy to add more -->
           <li class="tl-item">
-            <span class="tl-year">2024</span>
+            <span class="tl-year">2018</span>
             <div class="tl-dot" aria-hidden="true"></div>
             <div class="tl-body">
-              <p class="tl-role">PhD in Mathematics</p>
-              <p class="tl-place">[Your University]</p>
-              <p class="tl-note">Thesis: "[Your thesis title]"<br>Supervisor: Prof. [Name]</p>
+              <p class="tl-role">PhD in Pure Mathematics</p>
+              <p class="tl-place">Université de Montréal</p>
+              <p class="tl-note">Thesis: "Asymptotiques spectrales et géométrie
+              des nombres"<br>Supervisor: Iosif Polterovich</p>
             </div>
           </li>
 
-          <li class="tl-item">
-            <span class="tl-year">2020</span>
-            <div class="tl-dot" aria-hidden="true"></div>
-            <div class="tl-body">
-              <p class="tl-role">MMath / Part III Mathematics</p>
-              <p class="tl-place">University of Cambridge</p>
-              <p class="tl-note">Distinction. Essay: [Essay title]</p>
-            </div>
-          </li>
 
           <li class="tl-item">
-            <span class="tl-year">2019</span>
+            <span class="tl-year">2014</span>
             <div class="tl-dot" aria-hidden="true"></div>
             <div class="tl-body">
-              <p class="tl-role">BSc (Hons) Mathematics</p>
-              <p class="tl-place">[Your University]</p>
-              <p class="tl-note">First Class Honours</p>
+              <p class="tl-role">BSc in Pure and Applied Mathematics</p>
+              <p class="tl-place">Université de Montréal</p>
             </div>
           </li>
 
@@ -1232,36 +1533,36 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
 
       <!-- RIGHT: Positions & Awards -->
       <div class="reveal">
-        <p class="cv-col-label">Positions &amp; Awards</p>
+        <p class="cv-col-label">Positions</p>
         <ol class="timeline" aria-label="Positions and awards">
 
           <li class="tl-item">
-            <span class="tl-year">2025</span>
+            <span class="tl-year">2022&ndash;</span>
             <div class="tl-dot" aria-hidden="true"></div>
             <div class="tl-body">
-              <p class="tl-role">Postdoctoral Research Fellow</p>
-              <p class="tl-place">[Your Institution]</p>
-              <p class="tl-note">Funded by [Funding body]</p>
+              <p class="tl-role">Lecturer in Pure Mathematics</p>
+              <p class="tl-place">King's College London</p>
             </div>
           </li>
 
           <li class="tl-item">
-            <span class="tl-year">2024</span>
+            <span class="tl-year">2021</span>
             <div class="tl-dot" aria-hidden="true"></div>
             <div class="tl-body">
-              <p class="tl-role">[Prize / Fellowship Name]</p>
-              <p class="tl-place">[Awarding body]</p>
-              <p class="tl-note">Brief description of the award</p>
+              <p class="tl-role">Postdoctoral research associate</p>
+              <p class="tl-place">University of Bristol</p>
+              <p class="tl-note">Mentored by Asma Hassannezhad</p>
             </div>
           </li>
 
           <li class="tl-item">
-            <span class="tl-year">2023</span>
+            <span class="tl-year">2018&ndash;2021</span>
             <div class="tl-dot" aria-hidden="true"></div>
             <div class="tl-body">
-              <p class="tl-role">Visiting Researcher</p>
-              <p class="tl-place">[Institution], [Country]</p>
-              <p class="tl-note">Collaboration with [Name] on [topic]</p>
+              <p class="tl-role">Postdoctoral Research fellow</p>
+              <p class="tl-place">University College London</p>
+              <p class="tl-note">Mentored by Leonid Parnovski and Alexander
+              Sobolev</p>
             </div>
           </li>
 
@@ -1273,6 +1574,7 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
     </div>
   </div>
 </section>
+
 
 <!-- ================================================================
   == CONTACT ==
@@ -1287,40 +1589,29 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
     <div class="contact__grid">
 
       <div class="contact__body reveal">
-        <p>I am happy to hear from prospective students, collaborators, and anyone curious about spectral geometry. Please reach out by email — I aim to respond within a few days.</p>
+        <p>Please contact me by email, I aim to respond within a few days.</p>
         <!-- UPDATE: your email -->
-        <a href="mailto:YOUR EMAIL" class="email-link" aria-label="Send email">
+        <a href="mailto:jean.lagace@kcl.ac.uk" class="email-link" aria-label="Send email">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          YOUR EMAIL <!-- UPDATE -->
+          jean (dot) lagace (at) kcl (dot) ac (dot) uk <!-- UPDATE -->
         </a>
 
         <div class="contact__profiles" aria-label="Online profiles">
           <!-- UPDATE: replace # with your profile URLs and update handles -->
-          <a href="#" class="profile-link" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
+          <a href="https://scholar.google.com/citations?user=xoJjgZsAAAAJ&hl=fr" class="profile-link" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
             <div class="profile-link__icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769 0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
             </div>
             <div class="profile-link__info">
               <span class="profile-link__platform">Google Scholar</span>
-              <span class="profile-link__handle">Your Name</span>
             </div>
           </a>
-          <a href="#" class="profile-link" target="_blank" rel="noopener noreferrer" aria-label="ORCID">
-            <div class="profile-link__icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.016-5.325 5.016h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 3.872-2.484 3.872-3.722 0-2.016-1.284-3.722-3.828-3.722h-2.341z"/></svg>
-            </div>
-            <div class="profile-link__info">
-              <span class="profile-link__platform">ORCID</span>
-              <span class="profile-link__handle">YOUR ORCID <!-- UPDATE --></span>
-            </div>
-          </a>
-          <a href="#" class="profile-link" target="_blank" rel="noopener noreferrer" aria-label="arXiv">
+          <a href="https://www.kcl.ac.uk/people/jean-lagace" class="profile-link" target="_blank" rel="noopener noreferrer" aria-label="arXiv">
             <div class="profile-link__icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.406 0 0 6.637l.46.32 1.775-2.524v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.459-.32L4.406 0zm6.637 0L6.636 6.637l.46.32L8.87 4.433v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.46-.32L11.043 0zm6.637 0-4.407 6.637.46.32 1.775-2.524v16.843l-.46.32.46.32V24l4.407-6.636-.46-.32-1.775 2.524V2.724l.46-.32L17.68 0z"/></svg>
             </div>
             <div class="profile-link__info">
-              <span class="profile-link__platform">arXiv</span>
-              <span class="profile-link__handle">arXiv author page</span>
+                <span class="profile-link__platform">KCL page</span>
             </div>
           </a>
         </div>
@@ -1332,14 +1623,11 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
         </div>
         <!-- UPDATE: your office and address -->
         <p>
-          <strong>YOUR DEPARTMENT</strong><br>
-          YOUR INSTITUTION<br>
-          [Building, Room Number]<br>
-          [Street Address]<br>
-          Cambridge, CB3 0WA, UK <!-- UPDATE postcode/city -->
-        </p>
-        <p style="color:var(--color-text-faint);font-size:var(--text-xs)">
-          Office hours: [Your hours, e.g. Tuesday &amp; Thursday 14:00–16:00, or by appointment]
+          <strong>Department of Mathematics</strong><br>
+          King's College London<br>
+          S4.06, Strand Building<br>
+          Strand<br>
+          London, WC2R 2LS <!-- UPDATE postcode/city -->
         </p>
       </div>
 
@@ -1356,8 +1644,8 @@ button { cursor: pointer; background: none; border: none; color: inherit; }
 <footer class="footer" role="contentinfo">
   <div class="container footer__inner">
     <p class="footer__copy">
-      © <span id="yr"></span> Your Name <!--UPDATE-->
-      · <a href="mailto:YOUR EMAIL">YOUR EMAIL</a> <!--UPDATE-->
+      © <span id="yr"></span> Jean Lagacé <!--UPDATE-->
+      · <a href="mailto:jean.lagace@kcl.ac.uk">contact</a> <!--UPDATE-->
     </p>
     <p class="footer__updated">Last updated May 2026</p> <!-- UPDATE periodically -->
   </div>
